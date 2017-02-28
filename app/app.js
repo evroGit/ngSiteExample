@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'myDirectives']);
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
@@ -9,40 +9,41 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when("/start", {
             templateUrl: "start/start.html",
-            controller: "startController"
+            controller: "StartController"
         })
         .when("/help", {
             templateUrl:"help/help.html",
-            controller: "helpController"
-        })
+            controller: "HelpController"
+        }).
+        otherwise('/');
 });
 
 
 (function () {
     angular.module('myApp')
-        .controller('mainController', mainController);
+        .controller('MainController', mainController);
 
 
     mainController.$inject = ['$scope'];
     function mainController($scope) {
-        $scope.startText = "Hello";
     }
 })();
 
 
 (function () {
     angular.module('myApp')
-        .controller('startController', startController);
+        .controller('StartController', startController);
 
     startController.$inject = ['$scope'];
     function startController($scope) {
+        $scope.loadingTime = true;
     }
 })();
 
 
 (function () {
     angular.module('myApp')
-        .controller('helpController', helpController);
+        .controller('HelpController', helpController);
 
     helpController.$inject = ['$scope'];
     function helpController($scope) {
@@ -62,9 +63,44 @@ app.config(function ($routeProvider, $locationProvider) {
 })();
 
 
+(function () {
+    angular.module("myDirectives", [])
+        .directive("loaderWatcher", loaderWatcher);
+    loaderWatcher.$inject = [];
+    function loaderWatcher() {
+        return {
+            restrict: "A",
+            link: function (scope, element, attrs) {
+                attrs.$observe("loaderWatcher", function (value) {
+                    console.log("loaderWatcher", value)
+                })
+            }
+        }
+    }
+})();
+
 
 (function () {
-    angular.module('myApp')
+    angular.module('myDirectives')
+        .directive('attributWatcher', attributWatcher);
+
+    attributWatcher.$inject = [];
+    function attributWatcher() {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                scope.$watch("loadingTime", function (oldValue, newValue) {
+                    console.log(oldValue, newValue);
+                })
+
+            }
+        }
+    }
+})();
+
+
+(function () {
+    angular.module('myDirectives')
         .directive('onlyNumbers', onlyNumbers);
 
     onlyNumbers.$inject = [];

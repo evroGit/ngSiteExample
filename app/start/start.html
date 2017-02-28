@@ -1,3 +1,5 @@
 <div class="jumbotron text-center">
-    <div class="h1">Start</div>
+    <button ng-click="loadingTime=!loadingTime" class="btn btn-default">Click me</button>
+    <div attribut-watcher loader-watcher="{{loadingTime}}"></div>
+    <div>loadingTime value: {{loadingTime}}</div>
 </div>
