@@ -1,6 +1,54 @@
 'use strict';
 
-var app = angular.module('myApp', ['ngAnimate', 'ngCookies']);
+var app = angular.module('myApp', ['ngRoute']);
+app.config(function ($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix("");
+    $routeProvider
+        .when("/", {
+            templateUrl: "home/home.html"
+        })
+        .when("/start", {
+            templateUrl: "start/start.html",
+            controller: "startController"
+        })
+        .when("/help", {
+            templateUrl:"help/help.html",
+            controller: "helpController"
+        })
+});
+
+
+(function () {
+    angular.module('myApp')
+        .controller('mainController', mainController);
+
+
+    mainController.$inject = ['$scope'];
+    function mainController($scope) {
+        $scope.startText = "Hello";
+    }
+})();
+
+
+(function () {
+    angular.module('myApp')
+        .controller('startController', startController);
+
+    startController.$inject = ['$scope'];
+    function startController($scope) {
+    }
+})();
+
+
+(function () {
+    angular.module('myApp')
+        .controller('helpController', helpController);
+
+    helpController.$inject = ['$scope'];
+    function helpController($scope) {
+    }
+})();
+
 
 (function () {
     angular.module('myApp')
@@ -14,28 +62,10 @@ var app = angular.module('myApp', ['ngAnimate', 'ngCookies']);
 })();
 
 
-(function () {
-    angular.module('myApp', [])
-        .controller('mainController', mainController);
-
-    mainController.$inject = ['$scope'];
-    function mainController($scope) {
-        $scope.startText = "Hello";
-    }
-})();
 
 (function () {
     angular.module('myApp')
-        .controller('startController', startController);
-
-    startController.$inject = ['$scope'];
-    function startController($scope) {
-    }
-})();
-
-(function () {
-    angular.module('myApp')
-        .directive('onlyNumbers', onlyNumbers)
+        .directive('onlyNumbers', onlyNumbers);
 
     onlyNumbers.$inject = [];
     function onlyNumbers() {
