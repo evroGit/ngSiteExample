@@ -1,0 +1,26 @@
+<div class="well" ng-controller="LoginController" >
+    <div class="well-sm text-center">
+        <strong>Log In</strong>
+    </div>
+    <form class="form-group" name="loginForm" ng-submit="login()" loading-mask-watcher="{{loadingServices}}">
+        <div class="list-group">
+            <div class="list-group-item">
+                <label translate="USERNAME">Username</label>
+                <input type="text"
+                       class="form-control"
+                       ng-model="username"
+                       required>
+            </div>
+            <div class="list-group-item">
+                <label translate="PASSWORD">Password</label>
+                <input type="password"
+                       class="form-control"
+                       ng-model="password"
+                       required>
+            </div>
+        </div>
+        <button class="btn btn-default"
+                ng-disabled="!loginForm.$valid"
+                type="submit">Login</button>
+    </form>
+</div>
