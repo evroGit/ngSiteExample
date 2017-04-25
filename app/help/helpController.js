@@ -2,9 +2,9 @@
 
 (function () {
     angular.module('myApp')
-        .controller('HelpController', helpController);
+        .controller('helpController', helpController);
 
     helpController.$inject = ['$scope'];
     function helpController($scope) {
     }
-})()
+})();

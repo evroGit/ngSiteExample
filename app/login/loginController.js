@@ -2,18 +2,26 @@
 
 (function () {
     angular.module('myApp')
-        .controller('LoginController', loginController);
-    loginController.$inject = ['$scope', 'loginService', '$location', 'userService'];
-    function loginController($scope, loginService, $location, userService) {
+        .controller('loginController', loginController);
+    loginController.$inject = ['$scope', '$window', 'loginService', '$location', 'userService','$rootScope'];
+    function loginController($scope, $window, loginService, $location, userService, $rootScope) {
         $scope.loadingServices = [loginService];
         $scope.username = "";
         $scope.password = "";
 
+        if ($rootScope.newState && $rootScope.newState.indexOf('login')!==-1 && $rootScope.oldState.indexOf('login')==-1 ) {
+            $window.location.reload();
+        }
+
         $scope.login = function () {
             loginService.login($scope.username, $scope.password).then(
-                function () {
-                    var user = userService.getUser();
-                    $location.path(loginService.response.path);
+                function (response) {
+                    if (response && response.data) {
+                        $location.path(response.data.path);
+                    }
+                },
+                function (response) {
+                    $scope.showLoginError = true;
                 }
             )
         }

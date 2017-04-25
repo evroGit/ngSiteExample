@@ -5,30 +5,38 @@
         .service('userService', userService);
 
     userService.$inject = [];
-    function userService () {
+    function userService() {
         var me = this;
 
         var user = {
-            username:"",
-            userId:"",
-            firstname:"",
-            lastname:"",
-            token:""
+            username: "",
+            userId: "",
+            firstname: "",
+            lastname: "",
+            token: ""
         };
 
-        this.setUser = function(userObj) {
+        this.setUser = function (userObj) {
             for (var key in userObj) {
-                if (userObj.hasOwnProperty(key) && user.hasOwnProperty(key)){
+                if (userObj.hasOwnProperty(key) && user.hasOwnProperty(key)) {
                     user[key] = userObj[key];
                 }
             }
         };
 
-        this.getUser = function() {
-            return user;
-        }
+        this.removeUser = function () {
+            user.username = "";
+            user.userId = "";
+            user.firstname = "";
+            user.lastname = "";
+            user.token = "";
+        };
 
-        this.isLoggedIn = function (){
+        this.getUser = function () {
+            return user;
+        };
+
+        this.isLoggedIn = function () {
             return !!(me.getUser().userId && me.getUser().token);
         }
     }

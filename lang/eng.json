@@ -1,0 +1,12 @@
+﻿{
+  "page": {
+    "HELP_TITLE_TEXT": "Help Site",
+    "HELP_PAGE_TEXT": "Help Text"
+  },
+  "login": {
+    "LOGIN": "Login",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "LOGIN_FAILED": "False username or password"
+  }
+}

@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="LoginController">
+<html >
 <head>
     <meta charset="utf-8">
     <title>ngSite</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
-<body>
-<div class="container">
-    <!--<nav class="navbar navbar-default">-->
-    <!--<ul class="nav navbar-nav">-->
-    <!--<li><a href="#login">Login</a></li>-->
-    <!--<li><a href="#start">Start</a></li>-->
-    <!--<li><a href="#help">Help</a></li>-->
-    <!--</ul>-->
-    <!--</nav>-->
+<body  ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutServices}}">
     <div ng-view></div>
+
 
     <script src="../js/angular/angular.min.js"></script>
     <script src="../js/angular/angular-route.min.js"></script>
+    <script src="../js/angular/angular-animate.js"></script>
+    <script src="../js/angular/angular-cookies.js"></script>
     <script src="../js/jquery/jquery-3.1.1.js"></script>
     <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
@@ -27,11 +23,16 @@
     <script src="directive/loadingMaskWatcher-directive.js"></script>
 
     <script src="login/loginController.js"></script>
-    <script src="login/service/loginService.js"></script>
     <script src="login/service/userService.js"></script>
     <script src="start/startController.js"></script>
     <script src="help/helpController.js"></script>
 
-</div>
+    <script src="login/service/loginService.js"></script>
+    <script src="login/service/logoutService.js"></script>
+
+    <script src="../js/translate/angular-translate.min.js"></script>
+    <script src="../js/translate/angular-translate-storage-cookie.min.js"></script>
+    <script src="../js/translate/angular-translate-storage-local.min.js"></script>
+    <script src="../js/translate/angular-translate-loader-static-files.min.js"></script>
 </body>
 </html>

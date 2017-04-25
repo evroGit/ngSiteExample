@@ -1,0 +1,12 @@
+﻿{
+  "page": {
+    "HELP_TITLE_TEXT": "Hilfe",
+    "HELP_PAGE_TEXT": "Hilfe Text"
+  },
+  "login": {
+    "LOGIN": "Anmeldung",
+    "USERNAME": "Username",
+    "PASSWORD": "Passwort",
+    "LOGIN_FAILED": "Anmeldung fehlgeschlagen"
+  }
+}

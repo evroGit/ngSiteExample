@@ -1,26 +1,35 @@
-<div class="well" ng-controller="LoginController" >
-    <div class="well-sm text-center">
-        <strong>Log In</strong>
-    </div>
-    <form class="form-group" name="loginForm" ng-submit="login()" loading-mask-watcher="{{loadingServices}}">
-        <div class="list-group">
-            <div class="list-group-item">
-                <label translate="USERNAME">Username</label>
-                <input type="text"
-                       class="form-control"
-                       ng-model="username"
-                       required>
-            </div>
-            <div class="list-group-item">
-                <label translate="PASSWORD">Password</label>
-                <input type="password"
-                       class="form-control"
-                       ng-model="password"
-                       required>
-            </div>
+<div class="wrapper-b container loginBody" ng-controller="loginController">
+    <div class="container " style="width: 400px; height: 500px" ng-controller="loginController">
+        <div class="text-center">
+            <strong translate="login.LOGIN"></strong>
         </div>
-        <button class="btn btn-default"
-                ng-disabled="!loginForm.$valid"
-                type="submit">Login</button>
-    </form>
+
+        <form class="form-group" name="loginForm" ng-submit="login()" loading-mask-watcher="{{loadingServices}}">
+
+            <div class="wrapper-sm text-center" ng-if="showLoginError">
+                <label translate="login.LOGIN_FAILED" class="alert-danger"></label>
+            </div>
+
+            <div class="list-group">
+                <div class="list-group-item">
+                    <label translate="login.USERNAME"></label>
+                    <input type="text"
+                           class="form-control"
+                           ng-model="username"
+                           required>
+                </div>
+                <div class="list-group-item">
+                    <label translate="login.PASSWORD"></label>
+                    <input type="password"
+                           class="form-control"
+                           ng-model="password"
+                           required>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block "
+                    ng-disabled="!loginForm.$valid"
+                    type="submit">Login
+            </button>
+        </form>
+    </div>
 </div>

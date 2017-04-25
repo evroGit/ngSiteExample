@@ -2,9 +2,10 @@
 
 (function () {
     angular.module('myApp')
-        .controller('StartController', startController);
+        .controller('startController', startController);
 
     startController.$inject = ['$scope'];
     function startController($scope) {
+
     }
 })();
