@@ -23,11 +23,11 @@ app
                         // controller: "loginController"
                     })
                     .when("/start", {
-                        templateUrl: "start/siteframe.html"
+                        templateUrl: "main/siteframe.html"
                         // controller: "startController"
                     })
                     .when("/help", {
-                        templateUrl: "start/siteframe.html"
+                        templateUrl: "main/siteframe.html"
                         // controller: "helpController"
                     })
 

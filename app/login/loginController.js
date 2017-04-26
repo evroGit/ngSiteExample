@@ -3,15 +3,14 @@
 (function () {
     angular.module('myApp')
         .controller('loginController', loginController);
-    loginController.$inject = ['$scope', '$window', 'loginService', '$location', 'userService','$rootScope'];
-    function loginController($scope, $window, loginService, $location, userService, $rootScope) {
+    loginController.$inject = ['$scope', '$window', 'loginService', '$location', 'userService'];
+    function loginController($scope, $window, loginService, $location, userService) {
+
+        userService.removeUser();
+
         $scope.loadingServices = [loginService];
         $scope.username = "";
         $scope.password = "";
-
-        if ($rootScope.newState && $rootScope.newState.indexOf('login')!==-1 && $rootScope.oldState.indexOf('login')==-1 ) {
-            $window.location.reload();
-        }
 
         $scope.login = function () {
             loginService.login($scope.username, $scope.password).then(
