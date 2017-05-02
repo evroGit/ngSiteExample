@@ -1,0 +1,44 @@
+<!-- first -->
+<ul class="nav">
+    <li class="">
+        <span translate="nav.NAVIGATION"></span>
+    </li>
+
+    <li>
+        <a ui-sref="app.start">
+            <i  class="fa fa-rocket wrapper-xs"></i>
+            <span class="font-bold" translate="nav.START"></span>
+        </a>
+    </li>
+
+    <li>
+        <a href>
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down  text-active"></i>
+            </span>
+            <i class="fa fa-user wrapper-xs"></i>
+            <span translate="nav.CLIENT"></span>
+        </a>
+        <ul class="nav nav-sub">
+            <li>
+                <a ui-sref="app.client" >
+                    <span translate="nav.CLIENT_CREATE"></span>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="app.client">
+                    <span translate="nav.CLIENT_LIST"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a ui-sref="app.help" >
+            <i class="fa fa-address-book wrapper-xs"></i>
+            <span translate="nav.HELP"></span>
+        </a>
+    </li>
+
+</ul>

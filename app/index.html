@@ -2,20 +2,29 @@
 <html >
 <head>
     <meta charset="utf-8">
-    <title>ngSite</title>
+    <title>ngSiteExample</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
-<body  ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutServices}}">
-    <div ng-view></div>
+<body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutServices}}">
 
+    <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
+        <select class="form-control" ng-model="site.language" ng-change="changeLanguage(site.language)">
+            <option value="">Please select</option>
+            <option value="eng">English</option>
+            <option value="deu">Deutsch</option>
+        </select>
+    </div>
 
-    <script src="../js/angular/angular.min.js"></script>
+    <div ui-view></div>
+
+    <script src="../js/angular/angular.js"></script>
     <script src="../js/angular/angular-route.min.js"></script>
     <script src="../js/angular/angular-animate.js"></script>
     <script src="../js/angular/angular-cookies.js"></script>
     <script src="../js/jquery/jquery-3.1.1.js"></script>
+    <script src="../js/uiRouter/angular-ui-router.min.js"></script>
     <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
     <script src="app.js"></script>
@@ -25,6 +34,7 @@
     <script src="login/loginController.js"></script>
     <script src="login/service/userService.js"></script>
     <script src="start/startController.js"></script>
+    <script src="client/clientListController.js"></script>
     <script src="help/helpController.js"></script>
 
     <script src="login/service/loginService.js"></script>

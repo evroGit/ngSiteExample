@@ -1,12 +1,42 @@
 ﻿{
   "page": {
     "HELP_TITLE_TEXT": "Hilfe",
-    "HELP_PAGE_TEXT": "Hilfe Text"
+    "HELP_PAGE_TEXT": "Hilfe Text",
+    "SAVE": "Speichern",
+    "EDIT": "Bearbeiten"
+  },
+  "header": {
+    "FEEDBACK": "Feedback"
   },
   "login": {
     "LOGIN": "Anmeldung",
     "USERNAME": "Username",
     "PASSWORD": "Passwort",
     "LOGIN_FAILED": "Anmeldung fehlgeschlagen"
+  },
+  "start": {
+    "START_TITLE1":"Willkommen",
+    "START_BODY1":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec ligula nunc. Donec ullamcorper velit at mi placerat, at ullamcorper risus maximus. Suspendisse imperdiet vulputate turpis sit amet feugiat. In congue rutrum justo ac vehicula. Aliquam pellentesque tristique pharetra.",
+    "START_TITLE2":"Erste Schritte",
+    "START_BODY2":"Curabitur et pulvinar massa. Morbi convallis risus in placerat lacinia. Maecenas viverra elit id nibh volutpat venenatis. Nulla fringilla felis eu elit imperdiet, et maximus orci tincidunt."
+  },
+  "nav": {
+    "NAVIGATION":"Navigation",
+    "START": "Start",
+    "CLIENT": "Kunde",
+    "CLIENT_CREATE": "Kunden anlegen",
+    "CLIENT_LIST": "Kundenliste",
+    "HELP": "Hilfe"
+  },
+  "client": {
+    "CLIENT_CREATE": "Kunden anlegen",
+    "CLIENT_EDIT": "Kunden bearbeiten",
+    "CLIENT_LIST": "Kundenlilste"
+  },
+  "help": {
+    "FAQ":"FAQ",
+    "HOTLINE_BODY": "Telefon: (555) 555-555-555",
+    "HOTLINE": "Hotline-Information",
+    "FAQ_BODY": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis erat augue, efficitur pulvinar felis gravida non. Sed vel varius turpis. Nam eleifend lobortis feugiat. Curabitur id est dictum, iaculis dui a, bibendum dolor. Morbi lectus dolor, sodales vitae turpis in, sollicitudin luctus lorem. Donec massa dolor, rutrum sollicitudin sodales eget, mollis at orci. Etiam vitae ipsum eget sem venenatis euismod quis eu ante. Etiam in velit porta, faucibus diam vel, cursus eros. Nam metus eros, scelerisque sit amet fringilla vel, aliquam at ligula. Etiam varius at arcu et varius. Vestibulum sollicitudin risus quis dapibus finibus. Quisque quam turpis, bibendum id est sit amet, imperdiet elementum ligula. Praesent interdum erat ultricies nibh auctor iaculis."
   }
 }

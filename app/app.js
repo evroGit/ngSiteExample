@@ -5,41 +5,48 @@ var app = angular.module('myApp', [
     'ngAnimate',
     'myDirectives',
     'ngCookies',
+    'ui.router',
     'pascalprecht.translate'
 ]);
 
+
 app
     .config(
-        ['$routeProvider', '$locationProvider',
-            function ($routeProvider, $locationProvider) {
+        ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+            function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 $locationProvider.hashPrefix("");
-                $routeProvider
-                // .when("/", {
-                //     templateUrl: "start/start.html"
-                //     // controller: "startController"
-                // })
-                    .when("/login", {
+                $stateProvider
+                    .state("login", {
+                        url: "/login",
                         templateUrl: "login/login.html"
                         // controller: "loginController"
                     })
-                    .when("/start", {
+                    .state("app", {
+                        url: '/app',
+                        abstract: true,
                         templateUrl: "main/siteframe.html"
+                    })
+                    .state("app.start", {
+                        url: "/start",
+                        templateUrl: "start/start.html"
                         // controller: "startController"
                     })
-                    .when("/help", {
-                        templateUrl: "main/siteframe.html"
-                        // controller: "helpController"
+                    .state("app.clientCreate", {
+                        url: "/clientCreate",
+                        templateUrl: "client/clientCreate.html"
+                        // controller: "startController"
                     })
-
-                    // .when("/start", {
-                    //     templateUrl: "start/start.html"
-                    //     // controller: "startController"
-                    // })
-                    // .when("/help", {
-                    //     templateUrl: "help/help.html"
-                    //     // controller: "helpController"
-                    // })
-                    .otherwise('/login');
+                    .state("app.client", {
+                        url: "/client",
+                        templateUrl: "client/clientList.html"
+                        // controller: "startController"
+                    })
+                    .state("app.help", {
+                        url: "/help",
+                        templateUrl: "help/help.html"
+                        // controller: "startController"
+                    });
+                $urlRouterProvider.otherwise('/login');
             }
         ]
     )
@@ -68,13 +75,20 @@ app
 //////////////////////////  translation  //////////////////////////
 
 
-app.run(function ($rootScope, $location, userService) {
-    $rootScope.$on('$locationChangeStart',
-        function (angularEvent, newUrl, oldUrl) {
-            $rootScope.oldState = oldUrl;
-            $rootScope.newState = newUrl;
-            if (!userService.isLoggedIn()) {
-                $location.path('/login');
+app.run(function ($rootScope, $state, $location, userService) {
+    $rootScope.$state = $state;
+    $rootScope.$on('$stateChangeStart',
+        function (event, to, toParams, from) {
+
+            $rootScope.oldState = from.name;
+            $rootScope.newState = to.name;
+            $rootScope.isLoggedIn = userService.isLoggedIn();
+
+            if (to.name !== "login") {
+                if (!$rootScope.isLoggedIn) {
+                    event.preventDefault();
+                    $state.go("login");
+                }
             }
         }
     );
@@ -85,14 +99,22 @@ app.run(function ($rootScope, $location, userService) {
     angular.module('myApp')
         .controller('mainController', mainController);
 
-    mainController.$inject = ['$scope', 'logoutService', '$location'];
+    mainController.$inject = ['$scope', '$rootScope', 'logoutService', '$location', '$translate', 'userService'];
 
-    function mainController($scope, logoutService, $location) {
+    function mainController($scope, $rootScope, logoutService, $location, $translate, userService) {
         $scope.logoutServices = [logoutService];
-        $scope.site = {content: "start/start.html"};
+        $rootScope.userData = userService.getUser();
+        $scope.site = {
+            content: "start/start.html",
+            language: ""
+        };
 
-        $scope.goto = function (path) {
+        $scope.goToState = function (path) {
             $scope.site.content = path;
+        };
+
+        $scope.changeLanguage = function (lang) {
+            $translate.use(lang)
         };
 
         $scope.onLogoutClick = function () {
@@ -110,3 +132,47 @@ app.run(function ($rootScope, $location, userService) {
 })();
 
 
+//old routing without ui.router
+//     .config(
+//         ['$routeProvider', '$locationProvider',
+//             function ($routeProvider, $locationProvider) {
+//                 $locationProvider.hashPrefix("");
+//                 $routeProvider
+//                     .when("/login", {
+//                         templateUrl: "login/login.html"
+//                         // controller: "loginController"
+//                     })
+//                     .when("/start", {
+//                         templateUrl: "main/siteframe.html"
+//                         // controller: "startController"
+//                     })
+//                     .when("/clientCreate", {
+//                         templateUrl: "main/siteframe.html"
+//                         // controller: "startController"
+//                     })
+//                     .when("/client", {
+//                         templateUrl: "main/siteframe.html"
+//                         // controller: "startController"
+//                     })
+//                     .when("/help", {
+//                         templateUrl: "main/siteframe.html"
+//                         // controller: "helpController"
+//                     })
+//                     .otherwise('/login');
+//             }
+//         ]
+//     )
+
+//old  run  without ui.router
+// app.run(function ($rootScope, $location, userService) {
+//     $rootScope.$on('$locationChangeStart',
+//         function (angularEvent, newUrl, oldUrl) {
+//             $rootScope.oldState = oldUrl;
+//             $rootScope.newState = newUrl;
+//             $rootScope.isLoggedIn = userService.isLoggedIn();
+//             if (!$rootScope.isLoggedIn) {
+//                 $location.path('/login');
+//             }
+//         }
+//     );
+// });
