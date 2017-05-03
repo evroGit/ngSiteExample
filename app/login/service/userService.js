@@ -13,7 +13,7 @@
             userId: "",
             firstname: "",
             lastname: "",
-            token: ""
+            session:  ""
         };
 
         this.setUser = function (userObj) {
@@ -29,7 +29,7 @@
             user.userId = "";
             user.firstname = "";
             user.lastname = "";
-            user.token = "";
+            user.session = "";
         };
 
         this.getUser = function () {
@@ -37,7 +37,7 @@
         };
 
         this.isLoggedIn = function () {
-            return !!(me.getUser().userId && me.getUser().token);
+            return !!(me.getUser().userId && me.getUser().session);
         }
     }
 

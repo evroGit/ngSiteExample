@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
 </head>
-<body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutServices}}">
+<body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutLoadingArr}}">
 
     <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
         <select class="form-control" ng-model="site.language" ng-change="changeLanguage(site.language)">
@@ -31,14 +31,21 @@
 
     <script src="directive/loadingMaskWatcher-directive.js"></script>
 
-    <script src="login/loginController.js"></script>
-    <script src="login/service/userService.js"></script>
-    <script src="start/startController.js"></script>
-    <script src="client/clientListController.js"></script>
-    <script src="help/helpController.js"></script>
-
     <script src="login/service/loginService.js"></script>
     <script src="login/service/logoutService.js"></script>
+    <script src="login/loginController.js"></script>
+    <script src="login/service/userService.js"></script>
+    <script src="main/service/exchangeService.js"></script>
+    <script src="main/service/utilService.js"></script>
+
+    <script src="start/startController.js"></script>
+    <script src="client/clientListController.js"></script>
+    <script src="client/clientCreateController.js"></script>
+    <script src="help/helpController.js"></script>
+
+    <script src="client/service/clientCreateService.js"></script>
+    <script src="client/service/clientUpdateService.js"></script>
+    <script src="client/service/clientListService.js"></script>
 
     <script src="../js/translate/angular-translate.min.js"></script>
     <script src="../js/translate/angular-translate-storage-cookie.min.js"></script>

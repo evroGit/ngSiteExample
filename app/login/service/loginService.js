@@ -13,7 +13,7 @@
             data: {
                 userId: 1,
                 username: "musteruser",
-                token: "TOKEN546566",
+                session: "TOKEN546566",
                 firstname: "Max",
                 lastname: "Mustermann",
                 path: "/start"
@@ -49,7 +49,7 @@
                             function () {
                                 me.isLoading = false;
                                 defered.resolve(response);
-                            }, 3000);
+                            }, 500);
                         return promise;
                     },
                     function (response) {

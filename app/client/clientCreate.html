@@ -1,27 +1,41 @@
-<div class="col-md-12" ng-controller="clientCreateController">
+<div class="col-md-12">
+    <div class="wrapper-xs">
+        <h1 ng-if="!editClient.id" translate="client.CLIENT_CREATE" class="h3 text-info"></h1>
+        <h1 ng-if="editClient.id" translate="client.CLIENT_EDIT" class="h3 text-info"></h1>
+    </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <span translate="client.CLIENT_LIST"></span>
+            <span translate="client.CLIENT_DATA"></span>
         </div>
         <div class="panel-body">
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                    </thead>
+            <form name="clientForm" class="form-validation">
+                <div loading-mask-watcher="{{clientLoadingServiceArr}}">
+                    <div class="form-group">
+                        <label translate="client.FIRST_NAME"></label>
+                        <span class="text-danger">*</span>
+                        <input type="text" class="form-control" ng-model="editClient.firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label translate="client.LAST_NAME"></label>
+                        <span class="text-danger">*</span>
+                        <input type="text" class="form-control" ng-model="editClient.lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <label translate="client.EMAIL"></label>
+                        <span class="text-danger">*</span>
+                        <input type="email" class="form-control" ng-model="editClient.email" required>
+                    </div>
+                </div>
+            </form>
 
-                    <tbody>
-                    <tr ng-repeat="client in clientList">
+            <button type="submit" class="btn btn-success"
+                    ng-disabled="clientForm.$invalid"
+                    ng-click="onSaveClick()">
+                <i class="fa fa-check"></i>
+                <span translate="page.SAVE"></span>
+            </button>
 
-                    </tr>
-                    </tbody>
-
-                </table>
-            </div>
         </div>
     </div>
 </div>
-

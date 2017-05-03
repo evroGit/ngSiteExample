@@ -1,15 +1,16 @@
 <div class="header-space"></div>
-<div  ng-include=" 'main/header.html' " class="app-header"></div>
 
-<div class="page-left-side navi-wrap">
-    <nav ng-include="'main/nav.html'"></nav>
-</div>
+<div ng-include=" 'main/header.html' " class="app-header"></div>
+
+<nav ng-include="'main/nav.html'"></nav>
 
 <div class="app-content">
-    <div ui-view></div>
+    <div class="wrapper-sm">
+        <div ui-view></div>
+    </div>
 </div>
 
 <div class="footer wrapper">
-    &copy; Footer &amp; Co.
+    <span translate="footer.FOOTER"></span>
 </div>
 

@@ -3,7 +3,8 @@
     "HELP_TITLE_TEXT": "Help Site",
     "HELP_PAGE_TEXT": "Help Text",
     "SAVE": "Speichern",
-    "EDIT": "Bearbeiten"
+    "EDIT": "Bearbeiten",
+    "DELETE":"Delete"
   },
   "header": {
     "FEEDBACK": "Feedback"
@@ -31,12 +32,19 @@
   "client": {
     "CLIENT_CREATE": "Kunden anlegen",
     "CLIENT_EDIT": "Kunden bearbeiten",
-    "CLIENT_LIST": "Kundenlilste"
+    "CLIENT_LIST": "Kundenlilste",
+    "CLIENT_DATA": "Data",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "E-Mail"
   },
   "help": {
     "FAQ":"FAQ",
     "HOTLINE_BODY": "Phone: (555) 555-555-555",
     "HOTLINE": "Hotline-Information",
     "FAQ_BODY": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis erat augue, efficitur pulvinar felis gravida non. Sed vel varius turpis. Nam eleifend lobortis feugiat. Curabitur id est dictum, iaculis dui a, bibendum dolor. Morbi lectus dolor, sodales vitae turpis in, sollicitudin luctus lorem. Donec massa dolor, rutrum sollicitudin sodales eget, mollis at orci. Etiam vitae ipsum eget sem venenatis euismod quis eu ante. Etiam in velit porta, faucibus diam vel, cursus eros. Nam metus eros, scelerisque sit amet fringilla vel, aliquam at ligula. Etiam varius at arcu et varius. Vestibulum sollicitudin risus quis dapibus finibus. Quisque quam turpis, bibendum id est sit amet, imperdiet elementum ligula. Praesent interdum erat ultricies nibh auctor iaculis."
+  },
+  "footer":{
+    "FOOTER":"&copy; Footer &amp; Co."
   }
 }

@@ -29,22 +29,25 @@ app
                     .state("app.start", {
                         url: "/start",
                         templateUrl: "start/start.html"
-                        // controller: "startController"
                     })
                     .state("app.clientCreate", {
                         url: "/clientCreate",
-                        templateUrl: "client/clientCreate.html"
-                        // controller: "startController"
+                        templateUrl: "client/clientCreate.html",
+                        controller:"clientCreateController"
                     })
-                    .state("app.client", {
-                        url: "/client",
+                    .state("app.clientEdit", {
+                        url: "/clientEdit",
+                        templateUrl: "client/clientCreate.html",
+                        controller:"clientCreateController"
+
+                    })
+                    .state("app.clientList", {
+                        url: "/clientList",
                         templateUrl: "client/clientList.html"
-                        // controller: "startController"
                     })
                     .state("app.help", {
                         url: "/help",
                         templateUrl: "help/help.html"
-                        // controller: "startController"
                     });
                 $urlRouterProvider.otherwise('/login');
             }
@@ -99,19 +102,24 @@ app.run(function ($rootScope, $state, $location, userService) {
     angular.module('myApp')
         .controller('mainController', mainController);
 
-    mainController.$inject = ['$scope', '$rootScope', 'logoutService', '$location', '$translate', 'userService'];
+    mainController.$inject = [
+        '$scope',
+        '$rootScope',
+        'logoutService',
+        '$location',
+        '$translate',
+        'userService'
+    ];
 
-    function mainController($scope, $rootScope, logoutService, $location, $translate, userService) {
-        $scope.logoutServices = [logoutService];
+    function mainController($scope,
+                            $rootScope,
+                            logoutService,
+                            $location,
+                            $translate,
+                            userService) {
+
+        $scope.logoutLoadingArr = [logoutService];
         $rootScope.userData = userService.getUser();
-        $scope.site = {
-            content: "start/start.html",
-            language: ""
-        };
-
-        $scope.goToState = function (path) {
-            $scope.site.content = path;
-        };
 
         $scope.changeLanguage = function (lang) {
             $translate.use(lang)

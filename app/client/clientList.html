@@ -1,4 +1,4 @@
-<div class="col-md-12" ng-controller="clientListController">
+<div class="col-md-12" ng-controller="clientListController" loading-mask-watcher="{{clientListLoadingArr}}">
     <div class="panel panel-default">
         <div class="panel-heading">
             <span translate="client.CLIENT_LIST"></span>
@@ -9,13 +9,35 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Name</th>
+                        <th width="30px"></th>
+                        <th translate="client.FIRST_NAME"></th>
+                        <th translate="client.LAST_NAME"></th>
+                        <th translate="client.EMAIL"></th>
+                        <th width="100px"></th>
+                        <th width="100px"></th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    <tr ng-repeat="client in clientList">
-
+                    <tr ng-repeat="client in clientListArr">
+                        <td><i class="fa icon-user"></i></td>
+                        <td>&nbsp;{{client.firstname}}</td>
+                        <td> {{client.lastname}}</td>
+                        <td> {{client.email}}</td>
+                        <td>
+                            <button class="btn btn-xs btn-info"
+                                    ng-click="onEditClick(client)">
+                                <i class="fa fa-wrench"></i>
+                                <span translate="page.EDIT"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-xs btn-danger"
+                                    ng-click="onDeleteClick(client, $index)">
+                                <i class="fa fa-remove"></i>
+                                <span translate="page.DELETE"></span>
+                            </button>
+                        </td>
                     </tr>
                     </tbody>
 
