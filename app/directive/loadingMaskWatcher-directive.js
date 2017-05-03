@@ -1,9 +1,11 @@
 'use strict';
 
 (function () {
-    angular.module("myDirectives", [])
+    angular.module("myDirectives")
         .directive("loadingMaskWatcher", loadingMaskWatcher);
+
     loadingMaskWatcher.$inject = [];
+
     function loadingMaskWatcher() {
         return {
             restrict: "A",

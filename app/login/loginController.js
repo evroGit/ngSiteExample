@@ -3,8 +3,8 @@
 (function () {
     angular.module('myApp')
         .controller('loginController', loginController);
-    loginController.$inject = ['$rootScope', '$scope', '$window', 'loginService', '$location', '$state', 'userService'];
-    function loginController($rootScope, $scope, $window, loginService, $location, $state, userService) {
+    loginController.$inject = ['$scope', 'loginService', '$location', '$state', 'userService'];
+    function loginController($scope, loginService, $location, $state, userService) {
 
         userService.removeUser();
 
