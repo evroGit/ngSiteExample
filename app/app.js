@@ -6,7 +6,8 @@ var app = angular.module('myApp', [
     'myDirectives',
     'ngCookies',
     'ui.router',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ui.bootstrap'
 ]);
 
 angular.module('myDirectives', []);

@@ -7,6 +7,14 @@
 
             <div class="table-responsive">
                 <table class="table table-striped">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="searchClient">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
                     <thead>
                     <tr>
                         <th width="30px"></th>
@@ -19,7 +27,7 @@
                     </thead>
 
                     <tbody>
-                    <tr ng-repeat="client in clientListArr">
+                    <tr ng-repeat="client in clientListArr | filter: searchClient">
                         <td><i class="fa icon-user"></i></td>
                         <td>&nbsp;{{client.firstname}}</td>
                         <td> {{client.lastname}}</td>
