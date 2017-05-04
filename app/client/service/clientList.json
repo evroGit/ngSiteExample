@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "firstname": "Max",
+      "lastname": "Mustermann",
+      "email": "email@Mustermann"
+    },
+    {
+      "id": 2,
+      "firstname": "Bob",
+      "lastname": "Busterbann",
+      "email": "email@Busterbann"
+    },
+    {
+      "id": 3,
+      "firstname": "Lax",
+      "lastname": "LusterLann",
+      "email": "email@LusterLann"
+    },
+    {
+      "id": 4,
+      "firstname": "Sax",
+      "lastname": "Sustersann",
+      "email": "email@Sustersann"
+    },
+    {
+      "id": 5,
+      "firstname": "Dax",
+      "lastname": "Dustermdnn",
+      "email": "email@Dustermdnn"
+    },
+    {
+      "id": 6,
+      "firstname": "Fax",
+      "lastname": "Fusterfann",
+      "email": "email@Fusterfann"
+    }
+  ],
+  "total":6,
+  "success":true
+}
