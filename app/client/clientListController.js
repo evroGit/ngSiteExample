@@ -17,6 +17,7 @@
 
         $scope.clientListLoadingArr = [];
         $scope.clientListLoadingArr.push(clientListService);
+        $scope.placeholder = "page.SEARCH";
 
         $scope.clientListArr = [];
         clientListService.getList()

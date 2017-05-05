@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12" loading-mask-watcher="{{clientLoadingServiceArr}}">
     <div class="wrapper-xs">
         <h1 ng-if="!editClient.id" translate="client.CLIENT_CREATE" class="h3 text-info"></h1>
         <h1 ng-if="editClient.id" translate="client.CLIENT_EDIT" class="h3 text-info"></h1>
@@ -10,7 +10,7 @@
         <div class="panel-body">
 
             <form name="clientForm" class="form-validation">
-                <div loading-mask-watcher="{{clientLoadingServiceArr}}">
+
                     <div class="form-group">
                         <label translate="client.FIRST_NAME"></label>
                         <span class="text-danger">*</span>
@@ -26,7 +26,6 @@
                         <span class="text-danger">*</span>
                         <input type="email" class="form-control" ng-model="editClient.email" required>
                     </div>
-                </div>
             </form>
 
             <button type="submit" class="btn btn-success"

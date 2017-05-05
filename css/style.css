@@ -4,22 +4,21 @@ body {
     height: 100% !important;
 }
 
+/*wrappers*/
 .wrapper {
     padding:20px
 }
-
 .wrapper-xs {
     padding:5px;
 }
-
 .wrapper-sm {
     padding:10px
 }
-
 .wrapper-b {
     padding:30px;
 }
 
+/*text size*/
 .text-lg {
     font-size: 18px;
 }
@@ -66,6 +65,12 @@ body {
     margin-left: 250px;
 }
 
+.footer {
+    position: fixed;
+    bottom:0;
+    z-index: -1;
+}
+
 .app-content {
     height: 100%;
 }
@@ -89,8 +94,9 @@ body {
 }
 
 .navi-wrap {
-    background-color: #0165a3;
-    border:1px solid #0165a3;
+    background-color: #337ab7;
+    border:2px solid #2e6da4;
+    border-bottom: none;
     color:#cccccc ;
 }
 
@@ -110,9 +116,7 @@ body {
     top: 50px;
     left: 0;
     bottom: 0;
-
     background-color: inherit;
-    z-index: -1;
 }
 
 /*Navigation menu items styles >>>>>>>>*/

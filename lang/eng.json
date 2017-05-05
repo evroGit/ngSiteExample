@@ -4,10 +4,18 @@
     "HELP_PAGE_TEXT": "Help Text",
     "SAVE": "Speichern",
     "EDIT": "Bearbeiten",
-    "DELETE":"Delete"
+    "DELETE":"Delete",
+    "SEARCH":"Search",
+    "OK":"Ok",
+    "CANCEL":"Cancel"
   },
   "header": {
-    "FEEDBACK": "Feedback"
+    "FEEDBACK": "Send Message"
+  },
+  "feedback": {
+    "FEEDBACK": "Send Message",
+    "SUBJECT": "Theme",
+    "BODY": "Text"
   },
   "login": {
     "LOGIN": "Login",
@@ -40,7 +48,7 @@
   },
   "help": {
     "FAQ":"FAQ",
-    "HOTLINE_BODY": "Phone: (555) 555-555-555",
+    "HOTLINE_BODY": "Phone: (555) 555-555-555. Phasellus purus risus, bibendum at ultrices vel, lobortis condimentum augue. Cras consectetur lacinia libero ac semper.",
     "HOTLINE": "Information",
     "FAQ_BODY": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis erat augue, efficitur pulvinar felis gravida non. Sed vel varius turpis. Nam eleifend lobortis feugiat. Curabitur id est dictum, iaculis dui a, bibendum dolor. Morbi lectus dolor, sodales vitae turpis in, sollicitudin luctus lorem. Donec massa dolor, rutrum sollicitudin sodales eget, mollis at orci. Etiam vitae ipsum eget sem venenatis euismod quis eu ante. Etiam in velit porta, faucibus diam vel, cursus eros. Nam metus eros, scelerisque sit amet fringilla vel, aliquam at ligula. Etiam varius at arcu et varius. Vestibulum sollicitudin risus quis dapibus finibus. Quisque quam turpis, bibendum id est sit amet, imperdiet elementum ligula. Praesent interdum erat ultricies nibh auctor iaculis."
   },

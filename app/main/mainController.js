@@ -8,7 +8,8 @@
         'logoutService',
         '$location',
         '$translate',
-        'userService'
+        'userService',
+        'feedbackService'
     ];
 
     function mainController($scope,
@@ -16,13 +17,18 @@
                             logoutService,
                             $location,
                             $translate,
-                            userService) {
+                            userService,
+                            feedbackService) {
 
         $scope.logoutLoadingArr = [logoutService];
         $rootScope.userData = userService.getUser();
 
         $scope.changeLanguage = function (lang) {
             $translate.use(lang)
+        };
+
+        $scope.onFeedbackClick = function () {
+            feedbackService.openFeedback();
         };
 
         $scope.onLogoutClick = function () {

@@ -1,13 +1,21 @@
-<span class="navbar-brand header-left-space">ngSiteExample</span>
+<div class="navbar-brand header-left-space">
+    <!--fa-2x-->
+    <div class="label label-primary">
+        <span class="text-base">
+            <i class="fa fa-hand-peace-o"></i>
+            NGSite
+        </span>
+    </div>
+</div>
 
 <a href class="btn navbar-btn" ng-click="onFeedbackClick()">
     <i class="fa fa-envelope-o"></i>
-    <span translate="header.FEEDBACK"></span>
+    <span class="text-muted" translate="header.FEEDBACK"></span>
 </a>
 
 <div class="pull-right">
     <a href class="btn navbar-btn ">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-user-o"></i>
         <span class="text-muted"> {{userData.username}} </span>
     </a>
 

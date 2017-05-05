@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">
+        <span translate="feedback.FEEDBACK"></span>
+    </h3>
+</div>
+<div class="modal-body" id="modal-body">
+        <label translate="feedback.SUBJECT"></label>
+        <input type="text" class="form-control" name="subject"
+               ng-model="feedback.subject">
+        </input>
+        <label translate="feedback.BODY"></label>
+        <textarea class="form-control" name="body"
+                  ng-model="feedback.body"
+                  style="resize: vertical; height: 170px; text-align: left; line-height: 15px; vertical-align: top;">
+        </textarea>
+</div>
+<div class="modal-footer">
+        <button class="btn btn-primary"
+                ng-click="ok()"
+                ng-disabled="feedback.body.length<3">
+            <span translate="page.OK"></span>
+        </button>
+        <button class="btn btn-warning"
+                ng-click="cancel()">
+            <span translate="page.CANCEL"></span>
+        </button>
+</div>

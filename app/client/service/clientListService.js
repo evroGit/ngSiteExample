@@ -4,9 +4,9 @@
     angular.module('myApp')
         .service('clientListService', clientListService);
 
-    clientListService.$inject = ['$http','utilService'];
+    clientListService.$inject = ['$http', 'utilService', '$timeout'];
 
-    function clientListService($http, utilService) {
+    function clientListService($http, utilService, $timeout) {
         var me = this;
         this.isLoading = false;
 
@@ -15,17 +15,23 @@
             var httpConfig = utilService.getHttpConfigObject();
             httpConfig.url = 'client/service/clientList.json';
 
-            return $http(httpConfig)
-                .then(
-                    function (response) {
-                        me.isLoading = false;
-                        return response;
-                    },
-                    function (response) {
-                        me.isLoading = false;
-                        return response;
-                    }
-                )
+            return $timeout(function () {}, 1000).then(function () {
+                    //  client list http call
+                    return $http(httpConfig)
+                        .then(
+                            function (response) {
+                                me.isLoading = false;
+                                return response;
+                            },
+                            function (response) {
+                                me.isLoading = false;
+                                return response;
+                            }
+                        )
+                //  client list http call
+                });
+
+
         }
     }
 

@@ -4,9 +4,9 @@
     angular.module('myApp')
         .service('clientCreateService', clientCreateService);
 
-    clientCreateService.$inject = ['$http', 'utilService'];
+    clientCreateService.$inject = ['$http', 'utilService', '$timeout'];
 
-    function clientCreateService($http, utilService) {
+    function clientCreateService($http, utilService, $timeout) {
         var me = this;
         this.isLoading = false;
 
@@ -14,15 +14,20 @@
             this.isLoading = true;
             var httpConfig = utilService.getHttpConfigObject();
 
-            return $http(httpConfig)
-                .then(
-                    function (response) {
-                        me.isLoading = false;
-                    },
-                    function (response) {
-                        me.isLoading = false;
-                    }
-                )
+            return $timeout(function () {}, 500).then(function () {
+                //  client list http call
+                return $http(httpConfig)
+                    .then(
+                        function (response) {
+                            me.isLoading = false;
+                        },
+                        function (response) {
+                            me.isLoading = false;
+                        }
+                    )
+                //  client list http call
+            })
+
         }
     }
 

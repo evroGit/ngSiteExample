@@ -1,4 +1,4 @@
-<div class="page-left-side navi-wrap">
+<div class="page-left-side navi-wrap wrapper-sm">
 
     <ul class="nav">
         <li>
@@ -14,21 +14,24 @@
 
         <li ng-init="menuClose=true">
             <a href ng-click="menuClose=!menuClose">
-            <span class="pull-right text-muted">
-                <i class="fa fa-fw fa-angle-right" ng-class="{'textHide':!menuClose}"></i>
-                <i class="fa fa-fw fa-angle-down" ng-class="{'textHide':menuClose}"></i>
-            </span>
+                <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right" ng-class="{'textHide':!menuClose}"></i>
+                    <i class="fa fa-fw fa-angle-down" ng-class="{'textHide':menuClose}"></i>
+                </span>
                 <i class="fa fa-user wrapper-xs"></i>
                 <span translate="nav.CLIENT"></span>
             </a>
+
             <ul class="nav" ng-class="{'textHide':menuClose}">
                 <li class="nav-sub">
                     <a ui-sref="app.clientCreate" >
+                        <i class="fa fa-user-plus"></i>
                         <span translate="nav.CLIENT_CREATE"></span>
                     </a>
                 </li>
                 <li class="nav-sub">
                     <a ui-sref="app.clientList">
+                        <i class="fa fa-users"></i>
                         <span translate="nav.CLIENT_LIST"></span>
                     </a>
                 </li>
@@ -37,7 +40,7 @@
 
         <li>
             <a ui-sref="app.help">
-                <i class="fa fa-address-book wrapper-xs"></i>
+                <i class="fa fa-question-circle wrapper-xs"></i>
                 <span translate="nav.HELP"></span>
             </a>
         </li>
