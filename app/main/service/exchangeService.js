@@ -14,7 +14,7 @@
         };
 
         this.getExchangeObject = function () {
-            isEditMode = false; //reset EditMode-Flag
+            isEditMode = false; //reset EditMode-Flag after getter
             return exchangeObject;
         };
 

@@ -7,7 +7,8 @@
     "DELETE":"Löschen",
     "SEARCH":"Search",
     "OK":"Ok",
-    "CANCEL":"Abbruch"
+    "CANCEL":"Abbruch",
+    "PLEASE_SELECT":"Bitte wählen"
   },
   "header": {
     "FEEDBACK": "Nachricht Schreiben"

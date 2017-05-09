@@ -15,8 +15,9 @@
             var httpConfig = utilService.getHttpConfigObject();
             httpConfig.url = 'client/service/clientList.json';
 
-            return $timeout(function () {}, 1000).then(function () {
-                    //  client list http call
+            return $timeout(function () {}, 200).then(function () {
+                    
+                //  client list http call >>>>>>>
                     return $http(httpConfig)
                         .then(
                             function (response) {
@@ -27,8 +28,8 @@
                                 me.isLoading = false;
                                 return response;
                             }
-                        )
-                //  client list http call
+                        );
+                // <<<<<<<<<<< client list http call
                 });
 
 

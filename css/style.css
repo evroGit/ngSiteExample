@@ -1,6 +1,6 @@
 html,
 body {
-    width: 100% !important;
+    width:  100% !important;
     height: 100% !important;
 }
 
@@ -39,7 +39,7 @@ body {
     padding-top:300px;
     background-position:center top;
     background-color: #ffffff !important;
-    background-image: url("../img/car.jpg");
+    background-image: url("../img/concept.jpg");
     background-size: 500px;
     background-repeat:no-repeat;
 }
@@ -60,10 +60,10 @@ body {
     filter: alpha(opacity=50);
 }
 
-.app-content,
-.footer {
-    margin-left: 250px;
-}
+/*.app-content,*/
+/*.footer {*/
+    /*margin-left: 250px;*/
+/*}*/
 
 .footer {
     position: fixed;
@@ -79,9 +79,9 @@ body {
     padding-top: 50px;
 }
 
-.header-left-space {
-    width: 250px;
-}
+/*.header-left-space {*/
+    /*width: 250px;*/
+/*}*/
 
 .app-header {
     position: fixed;
@@ -103,11 +103,11 @@ body {
 .navi-wrap a {
     color: whitesmoke;
 }
-.page-left-side {
-    width: 250px;
-    position: relative;
-    float: left;
-}
+/*.page-left-side {*/
+    /*width: 250px;*/
+    /*position: relative;*/
+    /*float: left;*/
+/*}*/
 
 .page-left-side:before{
     content: "";
@@ -137,6 +137,17 @@ body {
     display: none !important;
 }
 
+
+/*Help Site*/
+.helpImage {
+    padding-top: 250px;
+    background-position: center center;
+    background-color: #ffffff !important;
+    background-image: url(../img/concept2.jpg);
+    background-size: 600px;
+    background-repeat: no-repeat;
+}
+
 .helpIcon {
     height: 60px;
 }
@@ -147,6 +158,12 @@ body {
     transition: all .1s ease-in-out 0s;
 }
 
+.fitBackgroundImage {
+    background-size: contain !important;
+}
+
+
+/* Form Validation */
 .form-validation .form-control.ng-dirty.ng-invalid {
     border-color: red !important;
 }
@@ -158,6 +175,45 @@ body {
 .form-validation .i-checks.ng-invalid.ng-dirty {
     border-color: red !important;;
 }
+
+
+/*RESTYLE SITE, IF BROWSER WINDOW GREATER AS 768px also until min.. */
+@media (min-width: 768px) {
+    .page-left-side {
+        width: 250px;
+        position: relative;
+        float: left;
+    }
+
+    .app-content,
+    .footer {
+        margin-left: 250px;
+    }
+
+    .header-left-space {
+        width: 250px;
+    }
+}
+
+/*RESTYLE  SITE, IF BROWSER SMALLER AS 767px, also until max.. - */
+@media (max-width: 767px) {
+
+    .page-left-side {
+        float: none;
+    }
+
+    .app-content,
+    .footer {
+        margin-left: 0px;
+    }
+
+    .header-left-space {
+        display: none;
+        /*width: 0px;*/
+    }
+}
+
+
 
 
 /*.text {*/

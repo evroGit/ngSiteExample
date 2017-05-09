@@ -23,6 +23,10 @@
         $scope.logoutLoadingArr = [logoutService];
         $rootScope.userData = userService.getUser();
 
+
+        var currentLang = $translate.use();
+        $scope.site = {"language":currentLang};
+
         $scope.changeLanguage = function (lang) {
             $translate.use(lang)
         };

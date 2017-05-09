@@ -4,39 +4,67 @@
       "id": 1,
       "firstname": "Max",
       "lastname": "Mustermann",
-      "email": "email@Mustermann"
+      "email": "email@Mustermann",
+      "image":"../img/icons/user1.png"
     },
     {
       "id": 2,
       "firstname": "Bob",
       "lastname": "Busterbann",
-      "email": "email@Busterbann"
+      "email": "email@Busterbann",
+      "image":"../img/icons/user2.png"
     },
     {
       "id": 3,
       "firstname": "Lax",
       "lastname": "LusterLann",
-      "email": "email@LusterLann"
+      "email": "email@LusterLann",
+      "image":"../img/icons/user3.png"
     },
     {
       "id": 4,
       "firstname": "Sax",
       "lastname": "Sustersann",
-      "email": "email@Sustersann"
+      "email": "email@Sustersann",
+      "image":"../img/icons/user4.png"
     },
     {
       "id": 5,
       "firstname": "Dax",
       "lastname": "Dustermdnn",
-      "email": "email@Dustermdnn"
+      "email": "email@Dustermdnn",
+      "image":"../img/icons/user5.png"
     },
     {
       "id": 6,
       "firstname": "Fax",
       "lastname": "Fusterfann",
-      "email": "email@Fusterfann"
+      "email": "email@Fusterfann",
+      "image":"../img/icons/user6.png"
+    },
+    {
+      "id": 7,
+      "firstname": "Tix",
+      "lastname": "Tistertann",
+      "email": "email@Tustertann",
+      "image":"../img/icons/user7.png"
+    },
+    {
+      "id": 8,
+      "firstname": "Rex",
+      "lastname": "Rustermann",
+      "email": "email@Rustermann",
+      "image":"../img/icons/user8.png"
+    },
+    {
+      "id": 9,
+      "firstname": "Pax",
+      "lastname": "Pusterpann",
+      "email": "email@Pusterpann",
+      "image":"../img/icons/user9.png"
     }
+
   ],
-  "total":6,
+  "total":9,
   "success":true
 }
