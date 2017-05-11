@@ -21,14 +21,18 @@
                             feedbackService) {
 
         $scope.logoutLoadingArr = [logoutService];
-        $rootScope.userData = userService.getUser();
+        $scope.userData = userService.getUser();
+        $scope.languageObj = {
+            "eng": "English",
+            "deu": "Deutsch"
+        };
 
-
-        var currentLang = $translate.use();
-        $scope.site = {"language":currentLang};
-
+        $scope.site = {"currentLangIso": $translate.use()};
         $scope.changeLanguage = function (lang) {
-            $translate.use(lang)
+            $translate.use(lang);
+            if ($scope.site.currentLangIso !== lang){
+                $scope.site.currentLangIso = lang;
+            }
         };
 
         $scope.onFeedbackClick = function () {

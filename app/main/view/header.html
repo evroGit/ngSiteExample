@@ -18,12 +18,13 @@
 
     <span class="dropdown">
         <button class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
-            <span>{{site.language || "page.PLEASE_SELECT" | translate}}</span>
+            <span>{{languageObj[site.currentLangIso] || "page.PLEASE_SELECT" | translate}}</span>
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-            <li><a href ng-click="changeLanguage('eng')">English</a></li>
-            <li><a href ng-click="changeLanguage('deu')">Deutsch</a></li>
+            <li ng-repeat="(langIso, lang) in languageObj">
+                <a href ng-click="changeLanguage(langIso)">{{lang}}</a>
+            </li>
         </ul>
     </span>
 

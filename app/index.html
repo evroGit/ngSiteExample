@@ -11,10 +11,12 @@
 <body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutLoadingArr}}">
 
     <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
-        <select class="form-control" ng-model="site.language" ng-change="changeLanguage(site.language)">
+        <select class="form-control" ng-model="site.currentLangIso" ng-change="changeLanguage(site.currentLangIso)">
             <option value="" translate="page.PLEASE_SELECT"></option>
-            <option value="eng">English</option>
-            <option value="deu">Deutsch</option>
+            <option ng-repeat="(langIso, lang) in languageObj" value="{{langIso}}"
+                ng-selected="langIso === site.currentLangIso">
+                {{lang}}
+            </option>
         </select>
     </div>
 
@@ -31,16 +33,18 @@
 
     <script src="app.js"></script>
     <script src="main/mainController.js"></script>
-    <script src="directive/loadingMaskWatcher-directive.js"></script>
     <script src="directive/login/login-directive.js"></script>
     <script src="directive/login/loginController.js"></script>
     <script src="directive/login/loginService.js"></script>
     <script src="login/service/logoutService.js"></script>
     <script src="login/service/userService.js"></script>
 
+    <script src="directive/loadingMaskWatcher-directive.js"></script>
+
     <script src="main/service/exchangeService.js"></script>
     <script src="main/service/utilService.js"></script>
     <script src="ngService/feedback/feedbackService.js"></script>
+    <script src="ngService/message/modalMessageService.js"></script>
 
     <script src="start/startController.js"></script>
     <script src="client/clientListController.js"></script>

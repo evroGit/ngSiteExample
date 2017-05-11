@@ -4,9 +4,9 @@
     angular.module('myApp')
         .service('clientUpdateService', clientUpdateService);
 
-    clientUpdateService.$inject = ['$http', 'utilService', '$timeout'];
+    clientUpdateService.$inject = ['$http', 'utilService', 'modalMessageService','$timeout'];
 
-    function clientUpdateService($http, utilService, $timeout) {
+    function clientUpdateService($http, utilService, modalMessageService, $timeout) {
         var me = this;
         this.isLoading = false;
 
@@ -20,9 +20,11 @@
                     .then(
                         function (response) {
                             me.isLoading = false;
+                            modalMessageService.showSuccessModalMessage()
                         },
                         function (response) {
                             me.isLoading = false;
+                            modalMessageService.showSuccessModalMessage()
                         }
                     );
                 //  update client http call >>>>>>>

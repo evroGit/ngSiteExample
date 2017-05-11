@@ -60,6 +60,13 @@ body {
     filter: alpha(opacity=50);
 }
 
+.modalMessage {
+    height: 170px;
+    resize: vertical;
+    text-align: left;
+    line-height: 15px;
+    vertical-align: top;
+}
 /*.app-content,*/
 /*.footer {*/
     /*margin-left: 250px;*/
@@ -162,6 +169,14 @@ body {
     background-size: contain !important;
 }
 
+.successMessage {
+    padding: 25px !important;
+    background-position: center center;
+    background-color: #ffffff !important;
+    background-image: url(../img/loading.gif);
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
 
 /* Form Validation */
 .form-validation .form-control.ng-dirty.ng-invalid {
@@ -212,7 +227,6 @@ body {
         /*width: 0px;*/
     }
 }
-
 
 
 

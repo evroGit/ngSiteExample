@@ -21,36 +21,36 @@ app
                 $stateProvider
                     .state("login", {
                         url: "/login",
-                        templateUrl: "login/login.html"
+                        templateUrl: "login/view/login.html"
                         // controller: "loginController"
                     })
                     .state("app", {
                         url: '/app',
                         abstract: true,
-                        templateUrl: "main/siteframe.html"
+                        templateUrl: "main/view/siteframe.html"
                     })
                     .state("app.start", {
                         url: "/start",
-                        templateUrl: "start/start.html"
+                        templateUrl: "start/view/start.html"
                     })
                     .state("app.clientCreate", {
                         url: "/clientCreate",
-                        templateUrl: "client/clientCreate.html",
+                        templateUrl: "client/view/clientCreate.html",
                         controller:"clientCreateController"
                     })
                     .state("app.clientEdit", {
                         url: "/clientEdit",
-                        templateUrl: "client/clientCreate.html",
+                        templateUrl: "client/view/clientCreate.html",
                         controller:"clientCreateController"
 
                     })
                     .state("app.clientList", {
                         url: "/clientList",
-                        templateUrl: "client/clientList.html"
+                        templateUrl: "client/view/clientList.html"
                     })
                     .state("app.help", {
                         url: "/help",
-                        templateUrl: "help/help.html"
+                        templateUrl: "help/view/help.html"
                     });
                 $urlRouterProvider.otherwise('/login');
             }

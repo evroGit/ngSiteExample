@@ -16,7 +16,7 @@
             <a href ng-click="menuClose=!menuClose">
                 <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right" ng-class="{'textHide':!menuClose}"></i>
-                    <i class="fa fa-fw fa-angle-down" ng-class="{'textHide':menuClose}"></i>
+                    <i class="fa fa-fw fa-angle-down"  ng-class="{'textHide':menuClose}"></i>
                 </span>
                 <i class="fa fa-user wrapper-xs"></i>
                 <span translate="nav.CLIENT"></span>
@@ -25,13 +25,13 @@
             <ul class="nav" ng-class="{'textHide':menuClose}">
                 <li class="nav-sub">
                     <a ui-sref="app.clientCreate" >
-                        <i class="fa fa-user-plus"></i>
+                        <i class="fa fa-user-plus wrapper-xs"></i>
                         <span translate="nav.CLIENT_CREATE"></span>
                     </a>
                 </li>
                 <li class="nav-sub">
                     <a ui-sref="app.clientList">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-users wrapper-xs"></i>
                         <span translate="nav.CLIENT_LIST"></span>
                     </a>
                 </li>

@@ -4,9 +4,9 @@
     angular.module('myApp')
         .service('clientCreateService', clientCreateService);
 
-    clientCreateService.$inject = ['$http', 'utilService', '$timeout'];
+    clientCreateService.$inject = ['$http', 'utilService', 'modalMessageService', '$timeout'];
 
-    function clientCreateService($http, utilService, $timeout) {
+    function clientCreateService($http, utilService, modalMessageService,  $timeout) {
         var me = this;
         this.isLoading = false;
 
@@ -20,9 +20,11 @@
                     .then(
                         function (response) {
                             me.isLoading = false;
+                            modalMessageService.showSuccessModalMessage()
                         },
                         function (response) {
                             me.isLoading = false;
+                            modalMessageService.showSuccessModalMessage()
                         }
                     )
                 //  client list http call
