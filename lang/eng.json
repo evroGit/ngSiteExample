@@ -8,7 +8,9 @@
     "SEARCH":"Search",
     "OK":"Ok",
     "CANCEL":"Cancel",
-    "PLEASE_SELECT":"Please select"
+    "PLEASE_SELECT":"Please select",
+    "SUCCESS":"Success",
+    "ERROR":"Error"
   },
   "header": {
     "FEEDBACK": "Send Message"

@@ -9,14 +9,30 @@
 
     function modalMessageService($uibModal) {
 
-        this.showModalMessage = function (title, body, footer, time, bodyStyle) {
+        this.showModalMessage = function (title, body, footer, time, propObject) {
             var modal = $uibModal.open({
-                // template: '<modal-message-frame modal-title="{{title}}" modal-body="{{body}}" modal-ok="ok()"></modal-message-frame>',
+                // backdrop  : 'static',
+                // keyboard  : false,
+                size: propObject?propObject.size:'sm',
                 controller: ['$scope', '$uibModalInstance', '$timeout', function ($scope, $uibModalInstance, $timeout) {
                     $scope.title = title;
                     $scope.body = body;
                     $scope.footer = footer;
-                    $scope.bodyStyle = bodyStyle;
+                    $scope.properties = {
+                        styleBody:"",
+                        styleHeader:"",
+                        styleFooter:"",
+                        buttonTextOk:"page.OK",
+                        buttonTextCanel:"page.CANCEL"
+                    };
+                    if (propObject && typeof propObject == 'object' ) {
+                        var key;
+                        for (key in propObject) {
+                            if (propObject.hasOwnProperty(key)&& $scope.properties.hasOwnProperty(key)) {
+                                $scope.properties[key] = propObject[key]
+                            }
+                        }
+                    }
                     $scope.ok = function () {
                         $uibModalInstance.close();
                     };
@@ -27,20 +43,20 @@
                     }
                 }],
                 template: [
-                    '<div class="modal-header" ng-if="title!==null">',
+                    '<div class="modal-header {{properties.styleHeader}}" ng-if="title!==null">',
                         '<h3 class="modal-title">',
-                            '<span>{{title}}</span>',
+                            '<span translate="{{title}}"></span>',
                         '</h3>',
                     '</div>',
-                    '<div class="modal-body {{bodyStyle}}">',
+                    '<div class="modal-body {{properties.styleBody}}">',
                         '<label>{{body}}</label>',
                     '</div>',
-                    '<div class="modal-footer" ng-if="footer!==null">',
+                    '<div class="modal-footer {{properties.styleFooter}}" ng-if="footer!==null">',
                         '<button class="btn btn-primary" ng-click="ok()">',
-                            '<span translate="page.OK"></span>',
+                            '<span translate="{{properties.buttonTextOk}}"></span>',
                         '</button>',
                         // '<button class="btn btn-warning" ng-click="cancel()">',
-                        //     '<span translate="page.CANCEL"></span>',
+                        //     '<span translate="{{properties.buttonTextCanel}}"></span>',
                         // '</button>',
                     '</div>'].join("")
             });
@@ -57,11 +73,12 @@
         };
 
         this.showSuccessModalMessage = function () {
-            this.showModalMessage("Erfolgreich", "", "", disappearTime, 'successMessage')
+            var propObj = {styleBody:'successMessage', styleHeader:"text-center", size:"sm"};
+            this.showModalMessage("page.SUCCESS", "", null, disappearTime, propObj)
         };
 
         this.showErrorModalMessage = function (title, body, footer) {
-            this.showModalMessage("Error: " + title + "!", body, footer)
+            this.showModalMessage("page.ERROR" + title, body, footer)
         }
     }
 })();

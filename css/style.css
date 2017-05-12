@@ -35,6 +35,14 @@ body {
     font-size: 12px;
 }
 
+.text-center {
+    text-align:center !important;
+}
+
+.textHide {
+    display: none !important;
+}
+
 .loginBody {
     padding-top:300px;
     background-position:center top;
@@ -67,28 +75,20 @@ body {
     line-height: 15px;
     vertical-align: top;
 }
-/*.app-content,*/
-/*.footer {*/
-    /*margin-left: 250px;*/
-/*}*/
 
-.footer {
-    position: fixed;
-    bottom:0;
-    z-index: -1;
+.header-space {
+    padding-top: 50px;
 }
 
 .app-content {
     height: 100%;
 }
 
-.header-space {
-    padding-top: 50px;
+.footer {
+    position: fixed;
+    bottom:0;
+    z-index: -1;
 }
-
-/*.header-left-space {*/
-    /*width: 250px;*/
-/*}*/
 
 .app-header {
     position: fixed;
@@ -110,11 +110,6 @@ body {
 .navi-wrap a {
     color: whitesmoke;
 }
-/*.page-left-side {*/
-    /*width: 250px;*/
-    /*position: relative;*/
-    /*float: left;*/
-/*}*/
 
 .page-left-side:before{
     content: "";
@@ -139,11 +134,6 @@ body {
     margin-left: 30px;
     height: auto !important;
 }
-
-.textHide {
-    display: none !important;
-}
-
 
 /*Help Site*/
 .helpImage {
@@ -170,12 +160,13 @@ body {
 }
 
 .successMessage {
-    padding: 25px !important;
+    padding: 50px !important;
     background-position: center center;
     background-color: #ffffff !important;
-    background-image: url(../img/loading.gif);
-    background-size: 50px;
+    background-image: url(../img/success.png);
+    background-size: 90px;
     background-repeat: no-repeat;
+    border-radius: 10px;
 }
 
 /* Form Validation */
