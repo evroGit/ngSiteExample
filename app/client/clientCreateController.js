@@ -16,9 +16,9 @@
                                     exchangeService) {
 
         $scope.clientLoadingServiceArr = [];
-        $scope.clientLoadingServiceArr.push(clientCreateService,clientUpdateService);
+        $scope.clientLoadingServiceArr.push(clientCreateService, clientUpdateService);
 
-        var storedClient =  exchangeService.getEditMode()?exchangeService.getExchangeObject():{};
+        var storedClient = exchangeService.getEditMode() ? exchangeService.getExchangeObject() : {};
 
         $scope.editClient = {};
 

@@ -8,21 +8,26 @@ var app = angular.module('myApp', [
     'ui.router',
     'pascalprecht.translate',
     'ui.bootstrap',
-    'ngTable'
+    'ngTable',
+    'ui.load'
 ]);
 
 angular.module('myDirectives', []);
 
 app
     .config(
-        ['$stateProvider', '$urlRouterProvider', '$locationProvider',
-            function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$controllerProvider', '$provide',
+            function ($stateProvider, $urlRouterProvider, $locationProvider, $controllerProvider, $provide) {
                 $locationProvider.hashPrefix("");
+
+                //lazy loading for controller and services
+                app.controller = $controllerProvider.register;
+                app.service = $provide.service;
+
                 $stateProvider
                     .state("login", {
                         url: "/login",
                         templateUrl: "login/view/login.html"
-                        // controller: "loginController"
                     })
                     .state("app", {
                         url: '/app',
@@ -31,26 +36,83 @@ app
                     })
                     .state("app.start", {
                         url: "/start",
-                        templateUrl: "start/view/start.html"
+                        templateUrl: "start/view/start.html",
+                        //lazy loading for controller and services
+                        resolve: {
+                            deps: [
+                                'uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load([
+                                        'start/startController.js'
+                                    ]);
+                                }
+                            ]
+                        }
                     })
                     .state("app.clientCreate", {
                         url: "/clientCreate",
                         templateUrl: "client/view/clientCreate.html",
-                        controller:"clientCreateController"
+                        //lazy loading for controller and services
+                        resolve: {
+                            deps: [
+                                'uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load([
+                                        'client/clientCreateController.js',
+                                        'client/service/clientCreateService.js',
+                                        'client/service/clientUpdateService.js'
+                                    ]);
+                                }
+                            ]
+                        }
                     })
                     .state("app.clientEdit", {
                         url: "/clientEdit",
                         templateUrl: "client/view/clientCreate.html",
-                        controller:"clientCreateController"
-
+                        //lazy loading for controller and services
+                        resolve: {
+                            deps: [
+                                'uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load([
+                                        'client/clientCreateController.js',
+                                        'client/service/clientCreateService.js',
+                                        'client/service/clientUpdateService.js'
+                                    ]);
+                                }
+                            ]
+                        }
                     })
                     .state("app.clientList", {
                         url: "/clientList",
-                        templateUrl: "client/view/clientList.html"
+                        templateUrl: "client/view/clientList.html",
+                        //lazy loading for controller and services
+                        resolve: {
+                            deps: [
+                                'uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load([
+                                        'client/clientListController.js',
+                                        'client/service/clientListService.js'
+                                    ]);
+                                }
+                            ]
+                        }
                     })
                     .state("app.help", {
                         url: "/help",
-                        templateUrl: "help/view/help.html"
+                        templateUrl: "help/view/help.html",
+                        //lazy loading for controller and services
+                        resolve: {
+                            deps: [
+                                'uiLoad',
+                                function (uiLoad) {
+                                    return uiLoad.load([
+                                        'help/helpController.js'
+                                    ]);
+                                }
+                            ]
+                        }
                     });
                 $urlRouterProvider.otherwise('/login');
             }
@@ -103,7 +165,7 @@ app.run(function ($rootScope, $state, $location, userService) {
 
 
 
-
+//history
 //old routing without ui.router
 //     .config(
 //         ['$routeProvider', '$locationProvider',

@@ -10,15 +10,17 @@
 </head>
 <body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutLoadingArr}}">
 
+    <!--Language combobox start-->
     <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
         <select class="form-control" ng-model="site.currentLangIso" ng-change="changeLanguage(site.currentLangIso)">
-            <option value="" translate="page.PLEASE_SELECT"></option>
+            <option value="" translate="header.LANGUAGE"></option>
             <option ng-repeat="(langIso, lang) in languageObj" value="{{langIso}}"
                 ng-selected="langIso === site.currentLangIso">
                 {{lang}}
             </option>
         </select>
     </div>
+    <!--Language combobox end-->
 
     <div ui-view></div>
 
@@ -30,6 +32,13 @@
     <script src="../js/jquery/jquery-3.1.1.min.js"></script>
     <script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="../js/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="../js/ui-load/angular-ui-load.js"></script>
+
+    <script src="../js/ng-table_v.1.0.0/ng-table.js"></script>
+    <script src="../js/translate/angular-translate.min.js"></script>
+    <script src="../js/translate/angular-translate-storage-cookie.min.js"></script>
+    <script src="../js/translate/angular-translate-storage-local.min.js"></script>
+    <script src="../js/translate/angular-translate-loader-static-files.min.js"></script>
 
     <script src="app.js"></script>
     <script src="main/mainController.js"></script>
@@ -40,26 +49,18 @@
     <script src="login/service/userService.js"></script>
 
     <script src="directive/loadingMaskWatcher-directive.js"></script>
-
     <script src="main/service/exchangeService.js"></script>
     <script src="main/service/utilService.js"></script>
     <script src="ngService/feedback/feedbackService.js"></script>
     <script src="ngService/message/modalMessageService.js"></script>
 
-    <script src="start/startController.js"></script>
-    <script src="client/clientListController.js"></script>
-    <script src="client/clientCreateController.js"></script>
-    <script src="help/helpController.js"></script>
-
-    <script src="client/service/clientCreateService.js"></script>
-    <script src="client/service/clientUpdateService.js"></script>
-    <script src="client/service/clientListService.js"></script>
-
-    <script src="../js/ng-table_v.1.0.0/ng-table.js"></script>
-
-    <script src="../js/translate/angular-translate.min.js"></script>
-    <script src="../js/translate/angular-translate-storage-cookie.min.js"></script>
-    <script src="../js/translate/angular-translate-storage-local.min.js"></script>
-    <script src="../js/translate/angular-translate-loader-static-files.min.js"></script>
+    <!--replaced during lazy loading for controller and services on app.js-->
+    <!--<script src="start/startController.js"></script>-->
+    <!--<script src="client/clientListController.js"></script>-->
+    <!--<script src="client/clientCreateController.js"></script>-->
+    <!--<script src="help/helpController.js"></script>-->
+    <!--<script src="client/service/clientCreateService.js"></script>-->
+    <!--<script src="client/service/clientUpdateService.js"></script>-->
+    <!--<script src="client/service/clientListService.js"></script>-->
 </body>
 </html>

@@ -13,7 +13,7 @@
             var modal = $uibModal.open({
                 // backdrop  : 'static',
                 // keyboard  : false,
-                size: propObject&&propObject.size?propObject.size:'sm',
+                size: propObject&&propObject.size?propObject.size:null,
                 controller: ['$scope', '$uibModalInstance', '$timeout', function ($scope, $uibModalInstance, $timeout) {
                     $scope.title = title;
                     $scope.body = body;
