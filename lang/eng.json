@@ -10,13 +10,19 @@
     "CANCEL":"Cancel",
     "PLEASE_SELECT":"Please select",
     "SUCCESS":"Success",
-    "ERROR":"Error"
+    "ERROR":"Error",
+    "WARNING":"Warning",
+    "DELETE_DATA_QUESTION":"Do you really want to delete this data?"
+  },
+  "user": {
+    "SEND_MESSAGE": "Send message"
   },
   "header": {
-    "FEEDBACK": "Send Message"
+    "FEEDBACK": "Contact support",
+    "LANGUAGE": "Select language"
   },
   "feedback": {
-    "FEEDBACK": "Send Message",
+    "FEEDBACK": "Contact support",
     "SUBJECT": "Theme",
     "BODY": "Text"
   },
@@ -41,13 +47,15 @@
     "HELP": "Help"
   },
   "client": {
-    "CLIENT_CREATE": "Kunden anlegen",
-    "CLIENT_EDIT": "Kunden bearbeiten",
-    "CLIENT_LIST": "Kundenlilste",
+    "CLIENT_CREATE": "Create client",
+    "CLIENT_EDIT": "Edit client",
+    "CLIENT_LIST": "Client list",
     "CLIENT_DATA": "Data",
     "FIRST_NAME": "First Name",
     "LAST_NAME": "Last Name",
-    "EMAIL": "E-Mail"
+    "EMAIL": "E-Mail",
+    "CACHE_ON": "Cache on ",
+    "CACHE_OFF":"Cache off"
   },
   "help": {
     "FAQ":"FAQ",

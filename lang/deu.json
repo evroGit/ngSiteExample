@@ -1,7 +1,7 @@
 ﻿{
   "page": {
     "HELP_TITLE_TEXT": "Hilfe",
-    "HELP_PAGE_TEXT": "Hilfe Text",
+    "HELP_PAGE_TEXT":  "Hilfe Text",
     "SAVE": "Speichern",
     "EDIT": "Bearbeiten",
     "DELETE":"Löschen",
@@ -10,13 +10,19 @@
     "CANCEL":"Abbruch",
     "PLEASE_SELECT":"Bitte wählen",
     "SUCCESS":"Erfolgreich",
-    "ERROR":"Fehler"
+    "ERROR":"Fehler",
+    "WARNING":"Achtung",
+    "DELETE_DATA_QUESTION":"Möchten Sie die Daten wiklich löschen?"
+  },
+  "user": {
+    "SEND_MESSAGE": "Nachricht schreiben"
   },
   "header": {
-    "FEEDBACK": "Nachricht Schreiben"
+    "FEEDBACK": "Support anschreiben",
+    "LANGUAGE": "Sprache wählen"
   },
   "feedback": {
-    "FEEDBACK": "Nachricht Schreiben",
+    "FEEDBACK": "Support anschreiben",
     "SUBJECT": "Thema",
     "BODY": "Text"
   },
@@ -47,8 +53,9 @@
     "CLIENT_DATA": "Daten",
     "FIRST_NAME": "Vorname",
     "LAST_NAME": "Nachname",
-    "EMAIL": "E-Mail"
-
+    "EMAIL": "E-Mail",
+    "CACHE_ON": "Cache an ",
+    "CACHE_OFF":"Cache aus"
   },
   "help": {
     "FAQ":"FAQ",

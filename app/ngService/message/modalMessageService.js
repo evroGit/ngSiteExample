@@ -9,16 +9,18 @@
 
     function modalMessageService($uibModal) {
 
-        this.showModalMessage = function (title, body, footer, time, propObject) {
+        this.showModalMessage = function (title, body, footer, time, propObject, callFn) {
             var modal = $uibModal.open({
                 // backdrop  : 'static',
                 // keyboard  : false,
-                size: propObject?propObject.size:'sm',
+                size: propObject&&propObject.size?propObject.size:'sm',
                 controller: ['$scope', '$uibModalInstance', '$timeout', function ($scope, $uibModalInstance, $timeout) {
                     $scope.title = title;
                     $scope.body = body;
                     $scope.footer = footer;
                     $scope.properties = {
+                        showOk:true,
+                        showCancel:false,
                         styleBody:"",
                         styleHeader:"",
                         styleFooter:"",
@@ -33,9 +35,16 @@
                             }
                         }
                     }
+
                     $scope.ok = function () {
+                        if (callFn)  callFn();
                         $uibModalInstance.close();
                     };
+
+                    $scope.cancel = function () {
+                        $uibModalInstance.close();
+                    };
+
                     if (time) {
                         $timeout(function () {
                             $uibModalInstance.close();
@@ -49,21 +58,21 @@
                         '</h3>',
                     '</div>',
                     '<div class="modal-body {{properties.styleBody}}">',
-                        '<label>{{body}}</label>',
+                        '<label translate="{{body}}"></label>',
                     '</div>',
                     '<div class="modal-footer {{properties.styleFooter}}" ng-if="footer!==null">',
-                        '<button class="btn btn-primary" ng-click="ok()">',
+                        '<button class="btn btn-primary" ng-click="ok()" ng-if="properties.showOk==true">',
                             '<span translate="{{properties.buttonTextOk}}"></span>',
                         '</button>',
-                        // '<button class="btn btn-warning" ng-click="cancel()">',
-                        //     '<span translate="{{properties.buttonTextCanel}}"></span>',
-                        // '</button>',
+                        '<button class="btn btn-warning" ng-click="cancel()" ng-if="properties.showCancel==true">',
+                            '<span translate="{{properties.buttonTextCanel}}"></span>',
+                        '</button>',
                     '</div>'].join("")
             });
-            modal.result.then(
-                function () {},
-                function () {}
-            );
+            // modal.result.then(
+            //     function () {},
+            //     function () {}
+            // );
         };
 
         var disappearTime = 700;

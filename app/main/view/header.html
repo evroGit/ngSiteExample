@@ -2,23 +2,22 @@
     <!--fa-2x-->
     <div class="label label-primary">
         <span class="text-base">
-            <i class="fa fa-hand-peace-o"></i>
+            <i class="fa fa-hand-peace-o animatedIcon"></i>
             NGSite
         </span>
     </div>
 </div>
 
 <span href class="btn navbar-btn" ng-click="onFeedbackClick()">
-    <i class="fa fa-envelope-o"></i>
+    <i class="fa fa-cogs animatedIcon"></i>
     <span class="text-muted" translate="header.FEEDBACK"></span>
 </span>
-
 
 <div class="pull-right">
 
     <span class="dropdown">
         <button class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
-            <span>{{languageObj[site.currentLangIso] || "page.PLEASE_SELECT" | translate}}</span>
+            <span>{{languageObj[site.currentLangIso] || "header.LANGUAGE" | translate}}</span>
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
@@ -28,13 +27,13 @@
         </ul>
     </span>
 
-    <span href class="btn navbar-btn ">
-        <i class="fa fa-user-o"></i>
+    <span href class="btn navbar-btn" ng-click="slidePanel.active = !slidePanel.active">
+        <i class="fa fa-user-o animatedIcon"></i>
         <span class="text-muted"> {{userData.username}} </span>
     </span>
 
     <a href class="btn navbar-btn navbar-btn " ng-click="onLogoutClick()">
-        <i class="fa fa-sign-out"></i>
+        <i class="fa fa-sign-out animatedIcon"></i>
     </a>
 </div>
 
