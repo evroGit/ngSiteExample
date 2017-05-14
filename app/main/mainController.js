@@ -22,16 +22,20 @@
 
         $scope.logoutLoadingArr = [logoutService];
         $scope.userData = userService.getUser();
+        $scope.slidePanel = {active:false};
         $scope.languageObj = {
             "eng": "English",
             "deu": "Deutsch"
         };
 
-        $scope.site = {"currentLangIso": $translate.use()};
+        $rootScope.site = {
+            "currentLangIso": $translate.use(),
+            "isCacheOn": $scope.userData.isCacheOn
+        };
         $scope.changeLanguage = function (lang) {
             $translate.use(lang);
-            if ($scope.site.currentLangIso !== lang){
-                $scope.site.currentLangIso = lang;
+            if ($rootScope.site.currentLangIso !== lang) {
+                $rootScope.site.currentLangIso = lang;
             }
         };
 

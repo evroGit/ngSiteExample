@@ -10,6 +10,7 @@
         '$state',
         'clientListService',
         'NgTableParams',
+        'modalMessageService',
         '$log'
     ];
     function clientListController($scope,
@@ -17,11 +18,14 @@
                                   $state,
                                   clientListService,
                                   NgTableParams,
+                                  modalMessageService,
                                   $log) {
 
         $scope.clientListLoadingArr = [];
         $scope.clientListLoadingArr.push(clientListService);
         $scope.placeholder = "page.SEARCH";
+
+        var clientListCtrl = this;
 
         $scope.clientListArr = [];
         $scope.tableParams = new NgTableParams(
@@ -33,13 +37,13 @@
                 //getData method should return an array or a promise that resolves to an array.
                 getData: function (params) {
                     if ($scope.clientListArr.length === 0) {
-                        return clientListService.getList()
+                        return clientListService.getList(params.page())
                             .then(function (response) {
                                 params.total(response.data.total);
                                 $scope.clientListArr = response.data.data;
                                 return $scope.clientListArr.slice((params.page() - 1) * params.count(), params.page() * params.count());
                             });
-                    } else {
+                    } else { //for simulation of delete functionality
                         params.total($scope.clientListArr.length);
                         return $scope.clientListArr.slice((params.page() - 1) * params.count(), params.page() * params.count());
                     }
@@ -48,7 +52,7 @@
         );
 
         //helper function to fake delete client
-        function getClientArrayIndexForId(clientId) {
+        clientListCtrl.getClientArrayIndexForId = function(clientId) {
             if (clientId) {
                 var i = 0;
                 for (; i < $scope.clientListArr.length; i++)
@@ -58,7 +62,7 @@
                 return i;
             }
             return null;
-        }
+        };
 
         $scope.onEditClick = function (client) {
             exchangeService.setEditMode(true);
@@ -67,9 +71,18 @@
         };
 
         $scope.onDeleteClick = function (client) {
-            var tmpClientIndex = getClientArrayIndexForId(client.id);
-            $scope.clientListArr.splice(tmpClientIndex, 1);
-            $scope.tableParams.reload();
+            modalMessageService.showModalMessage(
+                "page.WARNING",
+                "page.DELETE_DATA_QUESTION",
+                "",
+                null,
+                {showCancel: true},
+                function () {
+                    var tmpClientIndex = clientListCtrl.getClientArrayIndexForId(client.id);
+                    $scope.clientListArr.splice(tmpClientIndex, 1);
+                    $scope.tableParams.reload();
+                }
+            );
         };
 
 

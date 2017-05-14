@@ -1,12 +1,23 @@
 <div class="col-md-12" ng-controller="clientListController as clientListContr" loading-mask-watcher="{{clientListLoadingArr}}">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <span translate="client.CLIENT_LIST"></span>
+            <span class="h4 text-muted" translate="client.CLIENT_LIST"></span>
+            <label class="i-switch pull-right">
+                <input type="checkbox" ng-model="site.isCacheOn" >
+                <i></i>
+            </label>
+            <span ng-if="site.isCacheOn"
+                  style="margin-right: 10px;font-size: 13px;"
+                  class="badge bg-success-custom pull-right" translate="client.CACHE_ON"></span>
+            <span ng-if="!site.isCacheOn"
+                  style="margin-right: 10px;font-size: 13px;"
+                  class="badge bg-info-custom  pull-right" translate="client.CACHE_OFF"></span>
+
         </div>
         <div class="panel-body">
 
             <div class="table-responsive">
-                <table ng-table="tableParams" class="table table-striped">
+                <table ng-table="tableParams" class="table table-striped table-hover">
                     <!--search -->
                     <div class="input-group">
                         <input type="text" class="form-control" ng-model="searchClient" placeholder="{{placeholder|translate}}">
@@ -59,3 +70,20 @@
     </div>
 </div>
 
+<!--<tabset justified="true" class="tab-container">-->
+    <!--<tab>-->
+        <!--<tab-heading class="tab-heading" >-->
+            <!--<span translate="mainTab"></span>-->
+        <!--</tab-heading>-->
+        <!--<div ng-controller="exampleController" style="min-height: 100px">-->
+        <!--</div>-->
+    <!--</tab >-->
+    <!--<tab ng-repeat="tab in tabs" active=tab.active>-->
+        <!--<tab-heading class="tab-heading" >-->
+            <!--<span>{{tab.title}}</span>-->
+            <!--<a ng-click="removeTab($index)" href>-->
+                <!--<i class="fa fa-times"></i>-->
+            <!--</a>-->
+        <!--</tab-heading>-->
+    <!--</tab >-->
+<!--</tabset>-->

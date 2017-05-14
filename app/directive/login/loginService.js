@@ -45,6 +45,7 @@
                 return $http(httpConfig).then(
                     function (response) {
                         userService.setUser(response.data);
+                        userService.setUser({isCacheOn: false});
                         $timeout(
                             function () {
                                 me.isLoading = false;

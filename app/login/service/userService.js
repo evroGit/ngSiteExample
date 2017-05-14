@@ -13,7 +13,9 @@
             userId: "",
             firstname: "",
             lastname: "",
-            session:  ""
+            session: "",
+            lang: "",
+            isCacheOn: false
         };
 
         this.setUser = function (userObj) {
@@ -30,6 +32,8 @@
             user.firstname = "";
             user.lastname = "";
             user.session = "";
+            user.lang = "";
+            user.isCacheOn = ""
         };
 
         this.getUser = function () {
