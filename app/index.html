@@ -14,8 +14,9 @@
     <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
         <select class="form-control" ng-model="site.currentLangIso" ng-change="changeLanguage(site.currentLangIso)">
             <option value="" translate="header.LANGUAGE"></option>
-            <option ng-repeat="(langIso, lang) in languageObj" value="{{langIso}}"
-                ng-selected="langIso === site.currentLangIso">
+            <option ng-repeat="(langIso, lang) in languageObj"
+                    value="{{langIso}}"
+                    ng-selected="langIso === site.currentLangIso">
                 {{lang}}
             </option>
         </select>

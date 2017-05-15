@@ -17,12 +17,17 @@
 
     <span class="dropdown">
         <button class="btn navbar-btn dropdown-toggle" data-toggle="dropdown">
+            <i ng-if="languageObj[site.currentLangIso]" class="flag flag-{{site.currentLangIso}}"></i>
             <span>{{languageObj[site.currentLangIso] || "header.LANGUAGE" | translate}}</span>
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
             <li ng-repeat="(langIso, lang) in languageObj">
-                <a href ng-click="changeLanguage(langIso)">{{lang}}</a>
+
+                <a href ng-click="changeLanguage(langIso)">
+                    <i class="flag flag-{{langIso}}"></i>
+                    <span style="display: inline-block;padding-left: 5px;">{{lang}}</span>
+                </a>
             </li>
         </ul>
     </span>

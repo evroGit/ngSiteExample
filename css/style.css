@@ -80,14 +80,15 @@ body {
     padding-top: 50px;
 }
 
-.app-content {
-    height: 100%;
-}
 
 .footer {
-    position: fixed;
-    bottom:0;
-    z-index: -1;
+position: fixed;
+bottom:0;
+z-index: -1;
+}
+
+.app-content {
+    height: 100%;
 }
 
 .app-header {
@@ -135,13 +136,27 @@ body {
     height: auto !important;
 }
 
+.flag {
+    float: left;
+    width:  25px;
+    height: 20px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+.flag.flag-deu {
+    background-image: url(../img/icons/flag_deu.png);
+}
+.flag.flag-eng {
+    background-image: url(../img/icons/flag_eng.png);
+}
+
 /*Help Site*/
 .helpImage {
     padding-top: 250px;
     background-position: center center;
     background-color: #ffffff !important;
     background-image: url(../img/concept2.jpg);
-    background-size: 600px;
+    background-size: contain !important;
     background-repeat: no-repeat;
 }
 
