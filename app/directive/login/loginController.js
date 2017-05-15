@@ -9,8 +9,8 @@
         userService.removeUser();
 
         $scope.loadingServices = [loginService];
-        $scope.username = "";
-        $scope.password = "";
+        $scope.username = "Demo";
+        $scope.password = "Demo";
 
         $scope.login = function () {
             loginService.login($scope.username, $scope.password)

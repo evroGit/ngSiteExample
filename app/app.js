@@ -120,7 +120,7 @@ app
     )
 
 
-    //////////////////////////  translation  //////////////////////////
+    //////////////////////////  translation config start //////////////////////////
     .config(
         ['$translateProvider',
             function ($translateProvider) {
@@ -139,74 +139,25 @@ app
                 $translateProvider.useSanitizeValueStrategy('escapeParameters');
             }
         ]
-    );
-//////////////////////////  translation  //////////////////////////
+    )
+    //////////////////////////  translation  config end//////////////////////////
 
 
-app.run(function ($rootScope, $state, $location, userService) {
-    $rootScope.$state = $state;
-    $rootScope.$on('$stateChangeStart',
-        function (event, to, toParams, from) {
+    .run(function ($rootScope, $state, $location, userService) {
+        $rootScope.$state = $state;
+        $rootScope.$on('$stateChangeStart',
+            function (event, to, toParams, from) {
 
-            $rootScope.oldState = from.name;
-            $rootScope.newState = to.name;
-            $rootScope.isLoggedIn = userService.isLoggedIn();
+                $rootScope.oldState = from.name;
+                $rootScope.newState = to.name;
+                $rootScope.isLoggedIn = userService.isLoggedIn();
 
-            if (to.name !== "login") {
-                if (!$rootScope.isLoggedIn) {
-                    event.preventDefault();
-                    $state.go("login");
+                if (to.name !== "login") {
+                    if (!$rootScope.isLoggedIn) {
+                        event.preventDefault();
+                        $state.go("login");
+                    }
                 }
             }
-        }
-    );
-});
-
-
-
-
-//history
-//old routing without ui.router
-//     .config(
-//         ['$routeProvider', '$locationProvider',
-//             function ($routeProvider, $locationProvider) {
-//                 $locationProvider.hashPrefix("");
-//                 $routeProvider
-//                     .when("/login", {
-//                         templateUrl: "login/login.html"
-//                         // controller: "loginController"
-//                     })
-//                     .when("/start", {
-//                         templateUrl: "main/siteframe.html"
-//                         // controller: "startController"
-//                     })
-//                     .when("/clientCreate", {
-//                         templateUrl: "main/siteframe.html"
-//                         // controller: "startController"
-//                     })
-//                     .when("/client", {
-//                         templateUrl: "main/siteframe.html"
-//                         // controller: "startController"
-//                     })
-//                     .when("/help", {
-//                         templateUrl: "main/siteframe.html"
-//                         // controller: "helpController"
-//                     })
-//                     .otherwise('/login');
-//             }
-//         ]
-//     )
-
-//old  run  without ui.router
-// app.run(function ($rootScope, $location, userService) {
-//     $rootScope.$on('$locationChangeStart',
-//         function (angularEvent, newUrl, oldUrl) {
-//             $rootScope.oldState = oldUrl;
-//             $rootScope.newState = newUrl;
-//             $rootScope.isLoggedIn = userService.isLoggedIn();
-//             if (!$rootScope.isLoggedIn) {
-//                 $location.path('/login');
-//             }
-//         }
-//     );
-// });
+        );
+    });

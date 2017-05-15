@@ -3,7 +3,11 @@
         <strong translate="login.LOGIN"></strong>
     </div>
 
-    <form class="form-group" name="loginForm" ng-submit="login()" loading-mask-watcher="{{loadingServices}}">
+    <form class="form-group form-validation"
+          name="loginForm"
+          ng-submit="login()"
+          loading-mask-watcher="{{loadingServices}}">
+
         <div class="wrapper-sm text-center" ng-if="showLoginError">
             <label translate="login.LOGIN_FAILED" class="alert-danger"></label>
         </div>
