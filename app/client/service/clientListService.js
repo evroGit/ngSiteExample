@@ -37,7 +37,7 @@
                 return promise;
             } else {
                 var httpConfig = utilService.getHttpConfigObject();
-                httpConfig.url = 'client/service/clientList.json';
+                httpConfig.url = 'app/client/service/clientList.json';
                 return $timeout(function () {
                 }, 200).then(function () {
 

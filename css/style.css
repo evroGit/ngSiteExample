@@ -43,12 +43,16 @@ body {
     display: none !important;
 }
 
+.bg-size-contain {
+    background-size: contain !important;
+}
+
 .loginBody {
     padding-top:300px;
     background-position:center top;
     background-color: #ffffff !important;
     background-image: url("../img/concept.jpg");
-    background-size: 500px;
+    background-size: 550px;
     background-repeat:no-repeat;
 }
 
@@ -238,7 +242,7 @@ z-index: -1;
     transition: margin-left 0.3s;
 }
 
-/* Form Validation */
+/* Form Validation*/
 .form-validation .form-control.ng-dirty.ng-invalid {
     border-color: red !important;
 }
@@ -312,31 +316,6 @@ i.animatedIcon:hover {
     font-size: 18px;
 }
 
-/*settings top start*/
-/*.slidePanel {*/
-    /*z-index: 1000;*/
-    /*position: fixed;*/
-    /*top: -91px;*/
-    /*right: 75%;*/
-    /*width: 240px;*/
-    /*-webkit-transition: right 0.2s;*/
-    /*transition: top 0.2s;*/
-/*}*/
-/*.slidePanel.active {*/
-    /*top: -1px;*/
-/*}*/
-/*.slidePanel > .btn {*/
-    /*z-index: 1000;*/
-    /*background: #f6f8f8 !important;*/
-    /*border-top-width: 0;*/
-    /*border-color: #dee5e7;*/
-    /*position: absolute;*/
-    /*bottom:-20px;*/
-    /*!*top: -1px;*!*/
-    /*padding: 10px 15px;*/
-/*}*/
-/*slidePanel top end*/
-
 /*slidePanel right start*/
 .slidePanel {
     z-index: 1000;
@@ -360,6 +339,31 @@ i.animatedIcon:hover {
     padding: 10px 15px;
 }
 
+/*settings top start*/
+/*.slidePanel {*/
+/*z-index: 1000;*/
+/*position: fixed;*/
+/*top: -91px;*/
+/*right: 75%;*/
+/*width: 240px;*/
+/*-webkit-transition: right 0.2s;*/
+/*transition: top 0.2s;*/
+/*}*/
+/*.slidePanel.active {*/
+/*top: -1px;*/
+/*}*/
+/*.slidePanel > .btn {*/
+/*z-index: 1000;*/
+/*background: #f6f8f8 !important;*/
+/*border-top-width: 0;*/
+/*border-color: #dee5e7;*/
+/*position: absolute;*/
+/*bottom:-20px;*/
+/*!*top: -1px;*!*/
+/*padding: 10px 15px;*/
+/*}*/
+/*slidePanel top end*/
+
 
 /*.text {*/
 /*display: inline-block !important;*/
@@ -380,12 +384,3 @@ i.animatedIcon:hover {
 /*}*/
 /*<<<<<<<<<<<< Navigation menu items styles*/
 
-
-
-/*.logoLogin{*/
-/*margin-top:50px;*/
-/*background-image: url('../img/logo_280.png') !important;*/
-/*background-size: 100% !important;*/
-/*height:120px !important;*/
-/*width:280px !important;*/
-/*}*/

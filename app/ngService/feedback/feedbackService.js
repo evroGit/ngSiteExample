@@ -9,7 +9,7 @@
 
         this.openFeedback = function () {
             var modal = $uibModal.open({
-                templateUrl: 'ngService/feedback/feedbackModal.html',
+                templateUrl: 'app/ngService/feedback/feedbackModal.html',
                 controller: function ($scope, $uibModalInstance) {
                     $scope.feedback = {
                         "subject":"",

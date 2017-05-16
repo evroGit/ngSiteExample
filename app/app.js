@@ -27,23 +27,23 @@ app
                 $stateProvider
                     .state("login", {
                         url: "/login",
-                        templateUrl: "login/view/login.html"
+                        templateUrl: "app/login/view/login.html"
                     })
                     .state("app", {
                         url: '/app',
                         abstract: true,
-                        templateUrl: "main/view/siteframe.html"
+                        templateUrl: "app/main/view/siteframe.html"
                     })
                     .state("app.start", {
                         url: "/start",
-                        templateUrl: "start/view/start.html",
+                        templateUrl: "app/start/view/start.html",
                         //lazy loading for controller and services
                         resolve: {
                             deps: [
                                 'uiLoad',
                                 function (uiLoad) {
                                     return uiLoad.load([
-                                        'start/startController.js'
+                                        'app/start/startController.js'
                                     ]);
                                 }
                             ]
@@ -51,16 +51,16 @@ app
                     })
                     .state("app.clientCreate", {
                         url: "/clientCreate",
-                        templateUrl: "client/view/clientCreate.html",
+                        templateUrl: "app/client/view/clientCreate.html",
                         //lazy loading for controller and services
                         resolve: {
                             deps: [
                                 'uiLoad',
                                 function (uiLoad) {
                                     return uiLoad.load([
-                                        'client/clientCreateController.js',
-                                        'client/service/clientCreateService.js',
-                                        'client/service/clientUpdateService.js'
+                                        'app/client/clientCreateController.js',
+                                        'app/client/service/clientCreateService.js',
+                                        'app/client/service/clientUpdateService.js'
                                     ]);
                                 }
                             ]
@@ -68,16 +68,16 @@ app
                     })
                     .state("app.clientEdit", {
                         url: "/clientEdit",
-                        templateUrl: "client/view/clientCreate.html",
+                        templateUrl: "app/client/view/clientCreate.html",
                         //lazy loading for controller and services
                         resolve: {
                             deps: [
                                 'uiLoad',
                                 function (uiLoad) {
                                     return uiLoad.load([
-                                        'client/clientCreateController.js',
-                                        'client/service/clientCreateService.js',
-                                        'client/service/clientUpdateService.js'
+                                        'app/client/clientCreateController.js',
+                                        'app/client/service/clientCreateService.js',
+                                        'app/client/service/clientUpdateService.js'
                                     ]);
                                 }
                             ]
@@ -85,15 +85,15 @@ app
                     })
                     .state("app.clientList", {
                         url: "/clientList",
-                        templateUrl: "client/view/clientList.html",
+                        templateUrl: "app/client/view/clientList.html",
                         //lazy loading for controller and services
                         resolve: {
                             deps: [
                                 'uiLoad',
                                 function (uiLoad) {
                                     return uiLoad.load([
-                                        'client/clientListController.js',
-                                        'client/service/clientListService.js'
+                                        'app/client/clientListController.js',
+                                        'app/client/service/clientListService.js'
                                     ]);
                                 }
                             ]
@@ -101,14 +101,14 @@ app
                     })
                     .state("app.help", {
                         url: "/help",
-                        templateUrl: "help/view/help.html",
+                        templateUrl: "app/help/view/help.html",
                         //lazy loading for controller and services
                         resolve: {
                             deps: [
                                 'uiLoad',
                                 function (uiLoad) {
                                     return uiLoad.load([
-                                        'help/helpController.js'
+                                        'app/help/helpController.js'
                                     ]);
                                 }
                             ]
@@ -127,7 +127,7 @@ app
                 $translateProvider.useStaticFilesLoader({
                     files: [
                         {
-                            prefix: '../lang/',
+                            prefix: 'lang/',
                             suffix: '.json'
                         }
                     ]

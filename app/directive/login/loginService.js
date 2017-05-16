@@ -37,7 +37,7 @@
 
             var httpConfig = {
                 "method": "GET",
-                "url": "login/service/login-response.json",
+                "url": "app/login/service/login-response.json",
                 "params": null
             };
 

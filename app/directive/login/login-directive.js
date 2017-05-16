@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             scope: {},
-            templateUrl: 'directive/login/loginView.html',
+            templateUrl: 'app/directive/login/loginView.html',
             controller:  'loginController'
         }
     }

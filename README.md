@@ -1,6 +1,7 @@
 NgSite is an example for a single page application (SPA) made with AngularJs
 --
-This application does not require a backend - it uses a simple simulation with JSON files.
+This application represents a compact admin tool.
+It does not require a backend - it uses a simple simulation with JSON files.
 
 To install the project, it must be copied to the corresponding directory on a Web server.
 
