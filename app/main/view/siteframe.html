@@ -7,31 +7,39 @@
 <!-- slidePanel example start-->
 <div class="slidePanel" ng-class="{'active':slidePanel.active}">
     <!--<button class="btn btn-default" ng-click="slidePanel = !slidePanel">-->
-        <!--<i class="fa fa-gear"></i>-->
+    <!--<i class="fa fa-gear"></i>-->
     <!--</button>-->
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
         <div class="panel-heading">
-            <span class="text-muted" translate="user.SEND_MESSAGE"></span>
-            (<i class="fa fa-user-o"></i>)
+            <span class="h5">{{userData.username}}</span>
         </div>
         <div class="panel-body">
             <!--<label class="i-switch bg-info pull-right">-->
-                <!--<input type="checkbox" ng-model="app.slidePanel.chal">-->
-                <!--<i></i>-->
+            <!--<input type="checkbox" ng-model="app.slidePanel.chal">-->
+            <!--<i></i>-->
             <!--</label>-->
-            <textarea class="form-control modalMessage"
-                      style="margin-bottom: 10px"
-                      name="body"
-                      ng-model="feedback.body">
-            </textarea>
-            <button class="btn btn-primary pull-right"
+            <div class="wrapper-xs">
+                <label class="text-info pull-right">
+                    {{userData.firstname}}
+                </label>
+                <span class="h5 text-info" translate="client.FIRST_NAME"></span>
+            </div>
+
+            <div class="wrapper-xs">
+                <label class="text-info pull-right">
+                    {{userData.lastname}}
+                </label>
+                <span class="h5 text-info" translate="client.LAST_NAME"></span>
+            </div>
+
+            <button class="btn btn-primary btn-block pull-right"
                     ng-click="slidePanel.active = !slidePanel.active">
                 <span translate="page.OK"></span>
             </button>
         </div>
     </div>
 </div>
- <!--slidePanel  example end-->
+<!--slidePanel  example end-->
 
 <div class="app-content">
     <div class="wrapper-sm">

@@ -59,7 +59,14 @@
   },
   "help": {
     "FAQ":"FAQ",
-    "HOTLINE_BODY": "Phone: (555) 555-555-555. Phasellus purus risus, bibendum at ultrices vel, lobortis condimentum augue. Cras consectetur lacinia libero ac semper.",
+    "HOTLINE_BODY_TELEFON": "Telefon: (555) 555-555-555",
+    "QUESTIONS": {
+      "1":"1. Efficitur pulvinar felis  augue, efficitur pulvinar felis gravida non",
+      "2":"2. Curabitur id est dictum, iaculis dui a, bibendum .",
+      "3":"3. Morbi lectus dolor, sodales vitae tu iaculis dui a, bibendum dolor.",
+      "4":"4. Sollicitudin luctus loremturpis in, sollicitudin luctus lorem.",
+      "5":"5. Rutrum sollicitudin sodales eget, rutrum sollicitudin sodales eget, mollis at orci."
+    },
     "HOTLINE": "Information",
     "FAQ_BODY": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis erat augue, efficitur pulvinar felis gravida non. Sed vel varius turpis. Nam eleifend lobortis feugiat. Curabitur id est dictum, iaculis dui a, bibendum dolor. Morbi lectus dolor, sodales vitae turpis in, sollicitudin luctus lorem. Donec massa dolor, rutrum sollicitudin sodales eget, mollis at orci. Etiam vitae ipsum eget sem venenatis euismod quis eu ante. Etiam in velit porta, faucibus diam vel, cursus eros. Nam metus eros, scelerisque sit amet fringilla vel, aliquam at ligula. Etiam varius at arcu et varius. Vestibulum sollicitudin risus quis dapibus finibus. Quisque quam turpis, bibendum id est sit amet, imperdiet elementum ligula. Praesent interdum erat ultricies nibh auctor iaculis."
   },

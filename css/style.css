@@ -105,6 +105,10 @@ z-index: -1;
     border-bottom: 1px solid gray;
 }
 
+.header-right-buttons{
+    float: right !important;
+}
+
 .navi-wrap {
     background-color: #337ab7;
     border:2px solid #2e6da4;
@@ -152,6 +156,15 @@ z-index: -1;
 }
 .flag.flag-eng {
     background-image: url(../img/icons/flag_eng.png);
+}
+
+.round {
+    border-radius: 90px !important;
+}
+
+/* fixed outline boreder for buttons*/
+.btn:focus, .btn:active {
+    outline: none !important;
 }
 
 /*Help Site*/
@@ -258,6 +271,7 @@ z-index: -1;
 
 /*RESTYLE SITE, IF BROWSER WINDOW GREATER AS 768px also until min.. */
 @media (min-width: 768px) {
+
     .page-left-side {
         width: 250px;
         position: relative;
@@ -275,8 +289,7 @@ z-index: -1;
 }
 
 /*RESTYLE  SITE, IF BROWSER SMALLER AS 767px, also until max.. - */
-@media (max-width: 767px) {
-
+@media  (min-width: 305px) and (max-width: 767px)  {
     .page-left-side {
         float: none;
     }
@@ -288,7 +301,16 @@ z-index: -1;
 
     .header-left-space {
         display: none;
-        /*width: 0px;*/
+    }
+}
+
+@media (max-width: 304px) {
+    .header-space {
+        padding-top: 120px;
+    }
+
+    .header-left-space {
+        display: none;
     }
 }
 
@@ -334,10 +356,12 @@ i.animatedIcon:hover {
     border-right-width: 0;
     border-color: #dee5e7;
     position: absolute;
-    left: -42px;
-    top: -1px;
+    left: -40px;
+    top: 0px;
+    /*top: -1px*/
     padding: 10px 15px;
 }
+
 
 /*settings top start*/
 /*.slidePanel {*/
@@ -384,3 +408,102 @@ i.animatedIcon:hover {
 /*}*/
 /*<<<<<<<<<<<< Navigation menu items styles*/
 
+/*.bubbles {*/
+    /*position: absolute;*/
+    /*left:0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*height: 1100px;*/
+    /*z-index: 0;*/
+    /*overflow-y: hidden;*/
+    /*overflow-x: hidden;*/
+    /*-webkit-transform: translateZ(0);*/
+/*}*/
+
+/*.bubbles li {*/
+    /*position: absolute;*/
+    /*list-style: none;*/
+    /*display: block;*/
+    /*background-color: rgba(71, 71, 71, 0.15);*/
+    /*bottom: -90px;*/
+    /*-webkit-animation: square 15s infinite;*/
+    /*animation: square 15s infinite;*/
+    /*-webkit-transition-timing-function: linear;*/
+    /*transition-timing-function: linear;*/
+/*}*/
+
+/*.bubbles li:nth-child(1) {*/
+    /*width: 40px;*/
+    /*height: 40px;*/
+    /*left: 15%;*/
+    /*-webkit-animation-delay: 0s;*/
+    /*animation-delay: 2s;*/
+    /*-webkit-animation-duration: 17s;*/
+    /*animation-duration: 17s;*/
+/*}*/
+
+/*.bubbles li:nth-child(2) {*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*left: 20%;*/
+    /*-webkit-animation-delay: 2s;*/
+    /*animation-delay: 2s;*/
+    /*-webkit-animation-duration: 17s;*/
+    /*animation-duration: 17s;*/
+/*}*/
+
+/*.bubbles li:nth-child(3) {*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*left: 70%;*/
+    /*-webkit-animation-delay: 4s;*/
+    /*animation-delay: 4s;*/
+    /*-webkit-animation-duration: 13s;*/
+    /*animation-duration: 13s;*/
+/*}*/
+
+/*.bubbles li:nth-child(4) {*/
+    /*width: 70px;*/
+    /*height: 70px;*/
+    /*left: 75%;*/
+    /*-webkit-animation-delay: 1s;*/
+    /*animation-delay: 1s;*/
+    /*-webkit-animation-duration: 22s;*/
+    /*animation-duration: 22s;*/
+/*}*/
+
+/*.bubbles li:nth-child(5) {*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*left: 85%;*/
+    /*-webkit-animation-delay: 7s;*/
+    /*animation-delay: 7s;*/
+    /*-webkit-animation-duration: 12s;*/
+    /*animation-duration: 12s;*/
+/*}*/
+
+/*@-webkit-keyframes square {*/
+    /*0% {*/
+        /*-webkit-transform: translateY(0);*/
+        /*transform: translateY(0);*/
+        /*background-color: rgba(71, 71, 71, 0.15);*/
+    /*}*/
+    /*100% {*/
+        /*-webkit-transform: translateY(-1170px) rotate(-630deg);*/
+        /*transform: translateY(-1170px) rotate(-630deg);*/
+        /*background-color: rgba(71, 71, 71, 0.01);*/
+    /*}*/
+/*}*/
+
+/*@keyframes square {*/
+    /*0% {*/
+        /*-webkit-transform: translateY(0);*/
+        /*transform: translateY(0);*/
+        /*background-color: rgba(71, 71, 71, 0.15);*/
+    /*}*/
+    /*100% {*/
+        /*-webkit-transform: translateY(-1170px) rotate(-630deg);*/
+        /*transform: translateY(-1170px) rotate(-630deg);*/
+        /*background-color: rgba(71, 71, 71, 0.01);*/
+    /*}*/
+/*}*/

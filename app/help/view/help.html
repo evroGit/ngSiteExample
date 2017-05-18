@@ -6,28 +6,64 @@
 
         <div class="helpImage"></div>
 
+        <!--slidePanelHelp  example start -->
+        <div class="slidePanel" style="top: 245px;" ng-class="{'active':slidePanelHelp.active}">
+            <button class="btn btn-default"
+                    ng-click="slidePanelHelp.active = !slidePanelHelp.active">
+                <i class="fa fa-phone text-md"></i><!--<i class="fa fa-gear"></i>-->
+            </button>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="text-muted" translate="user.SEND_MESSAGE"></span>
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control modalMessage"
+                              style="margin-bottom: 10px"
+                              name="body"
+                              ng-model="feedback.body">
+                    </textarea>
+                    <button class="btn btn-primary pull-right"
+                            ng-click="slidePanelHelp.active = !slidePanelHelp.active">
+                        <span translate="page.OK"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--slidePanelHelp  example end-->
+
         <div class="col-sm-12">
-            <div class="col-sm-6 text-center"  ng-click="onFaqClick()">
+            <div class="col-sm-12 text-center"  ng-click="onFaqClick()">
                 <a class="btn text-muted helpIcon">
                     <i class="fa fa-question fa-2x"></i>
                     <span translate="help.FAQ"></span>
                 </a>
             </div>
-            <div class="col-sm-6 text-center " ng-click="onHotlineClick()">
-                <a class="btn text-muted helpIcon">
-                    <i class="fa fa-phone fa-2x"></i>
-                    <span translate="help.HOTLINE"></span>
-                </a>
-            </div>
         </div>
-
         <div class="panel-body">
-            <div class="wrapper-sm">
+            <div class="wrapper-b">
                 <div class="col-sm-12" ng-if="isButtonSelected1">
-                    <span translate="help.FAQ_BODY"></span>
-                </div>
-                <div class="col-sm-12" ng-if="isButtonSelected2">
-                    <span translate="help.HOTLINE_BODY"></span>
+                    <!--search start -->
+                    <div class="col-sm-12 wrapper-b">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="searchText" placeholder="{{placeholder|translate}}">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        </div>
+                    </div>
+                    <!--search end -->
+
+                    <span style="display: block" class="wrapper-xs"
+                          translate="help.FAQ_BODY"></span>
+                    <span style="display: block" class="wrapper-xs"
+                          ng-repeat="item in questionsList|filter:searchText">
+                            <span class="helpIcon">
+                                <i class="fa fa-question-circle"></i>
+                                {{item|translate}}
+                            </span>
+                    </span>
                 </div>
             </div>
         </div>

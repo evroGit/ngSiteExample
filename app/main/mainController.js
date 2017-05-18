@@ -22,7 +22,8 @@
 
         $scope.logoutLoadingArr = [logoutService];
         $scope.userData = userService.getUser();
-        $scope.slidePanel = {active:false};
+        $scope.slidePanel =     {active:false};
+        $scope.slidePanelHelp = {active:false};
         $scope.languageObj = {
             "eng": "English",
             "deu": "Deutsch"
