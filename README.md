@@ -8,7 +8,7 @@ The project is made to present the power of AngularJs. It should show Angular be
 [http://ngsite.square7.de](http://ngsite.square7.de)
 
 ## Getting Started
-To install the project, it must be copied to the corresponding directory on a Web server.
+To install the project, it must be copied to the corresponding directory on a web server.
 
 ### The NgSite uses the following basic technologies:
 
@@ -17,13 +17,13 @@ To install the project, it must be copied to the corresponding directory on a We
 * [UI Bootstrap v2.5.0](https://angular-ui.github.io/bootstrap/) - Bootstrap components written in AngularJS
 
 ### Futures:
---
 - Responsive design
 - Multilingual capacity
 - Dynamic tables with paging
 - Cache for table content
 - Lazy loading for controllers and services
 - Proven template-based layout (navi, content, header, footer)
+- Css animation styles
 - And some other things...
 
 
