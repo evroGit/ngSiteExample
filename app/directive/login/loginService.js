@@ -13,7 +13,7 @@
             data: {
                 userId: 1,
                 username: "musteruser",
-                session: "TOKEN546566",
+                session:  "TOKEN546566",
                 firstname: "Max",
                 lastname: "Mustermann",
                 path: "/start"
@@ -74,7 +74,7 @@
 
             $timeout(function () {
                 me.isLoading = false;
-                if (username && password != 'blabla') {
+                if (username && password != 'wrong') {
                     defered.resolve(responseSuccess);
                     userService.setUser(responseSuccess.data);
                 } else {

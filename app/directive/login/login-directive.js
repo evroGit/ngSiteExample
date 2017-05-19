@@ -10,29 +10,26 @@
             restrict: 'E',
             scope: {},
             templateUrl: 'app/directive/login/loginView.html',
-            controller:  'loginController'
+            controller: ['$scope', 'loginService', '$state', 'userService',
+                function loginController($scope, loginService, $state, userService) {
+                    userService.removeUser();
+                    $scope.loadingServices = [loginService];
+                    $scope.username = "Demo";
+                    $scope.password = "Demo";
+                    $scope.login = function () {
+                        loginService.login($scope.username, $scope.password)
+                            .then(
+                                function (response) {
+                                    if (response && response.data) {
+                                        $state.go("app.start");
+                                    }
+                                },
+                                function (response) {
+                                    $scope.showLoginError = true;
+                                }
+                            )
+                    }
+                }]
         }
     }
 })();
-
-// controller: ['$scope', 'loginService', '$location', '$state', 'userService',
-//     function loginController($scope, loginService, $location, $state, userService) {
-//         userService.removeUser();
-//         $scope.loadingServices = [loginService];
-//         $scope.username = "";
-//         $scope.password = "";
-//         $scope.login = function () {
-//             loginService.login($scope.username, $scope.password)
-//                 .then(
-//                     function (response) {
-//                         if (response && response.data) {
-//                             $state.go("app.start");
-//                             // $location.path(response.data.path);
-//                         }
-//                     },
-//                     function (response) {
-//                         $scope.showLoginError = true;
-//                     }
-//                 )
-//         }
-//     }]

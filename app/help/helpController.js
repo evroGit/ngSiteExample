@@ -13,7 +13,7 @@
         $scope.placeholder = "page.SEARCH";
         $scope.questionsList = [];
 
-        //fill dummy questions arraz
+        //fill dummy questions array
         for (var i = 1; i <= 5; i++) {
             var qTranslation = $translate.instant("help.QUESTIONS." + i);
             $scope.questionsList.push(qTranslation);
