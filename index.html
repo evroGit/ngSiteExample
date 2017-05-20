@@ -11,11 +11,12 @@
 <body ng-app="myApp" ng-controller="mainController" loading-mask-watcher="{{logoutLoadingArr}}">
 
     <!-- bubbles  start -->
-    <bubble number="10" box-height="1100" rounding="5" start-color="blue" end-color="blue"></bubble>
+    <bubble number="10" box-height="1000" rounding="0" end-color="blue"></bubble>
     <!-- bubbles end -->
 
     <!--Language combobox start-->
-    <div class="wrapper-sm pull-right" ng-if="!isLoggedIn">
+    <div class="wrapper-sm pull-right" ng-if="!isLoggedIn"
+         style="position: relative; top: 50px; right: 50px">
         <select class="form-control" ng-model="site.currentLangIso" ng-change="changeLanguage(site.currentLangIso)">
             <option value="" translate="header.LANGUAGE"></option>
             <option ng-repeat="(langIso, lang) in languageObj"
