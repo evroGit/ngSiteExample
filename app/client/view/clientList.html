@@ -1,91 +1,131 @@
-<div class="col-md-12" ng-controller="clientListController"
-     loading-mask-watcher="{{clientListLoadingArr}}">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <span class="h4 text-muted" translate="client.CLIENT_LIST"></span>
-            <label class="i-switch pull-right">
-                <input type="checkbox" ng-model="site.isCacheOn" >
-                <i></i>
-            </label>
-            <span ng-if="site.isCacheOn"
-                  style="margin-right: 10px;font-size: 13px;"
-                  class="badge bg-success-custom pull-right" translate="client.CACHE_ON"></span>
-            <span ng-if="!site.isCacheOn"
-                  style="margin-right: 10px;font-size: 13px;"
-                  class="badge bg-info-custom  pull-right" translate="client.CACHE_OFF"></span>
-        </div>
+<div class="col-md-12" style="display: inline-block;">
 
-        <div class="panel-body">
-            <div class="table-responsive">
-                <table ng-table="tableParams" class="table table-striped table-hover">
-                    <!--search -->
-                    <div class="input-group">
-                        <input type="text" class="form-control" ng-model="searchClient" placeholder="{{placeholder|translate}}">
+    <uib-tabset justified="true" class="myListTabs">
+
+        <uib-tab>
+            <uib-tab-heading>
+                <span class="h4 wrapper-xs text-muted" translate="client.CLIENT_LIST"></span>
+            </uib-tab-heading>
+
+            <div class="col-md-12 resetPadding"
+                 ng-controller="clientListController"
+                 loading-mask-watcher="{{clientListLoadingArr}}">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        &nbsp; <!--placeholder for heading-->
+                        <label class="i-switch pull-right">
+                            <input type="checkbox" ng-model="site.isCacheOn">
+                            <i></i>
+                        </label>
+                        <span ng-if="site.isCacheOn"
+                              style="margin-right: 10px;font-size: 13px;"
+                              class="badge bg-success-custom pull-right" translate="client.CACHE_ON"></span>
+                        <span ng-if="!site.isCacheOn"
+                              style="margin-right: 10px;font-size: 13px;"
+                              class="badge bg-info-custom  pull-right" translate="client.CACHE_OFF"></span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table ng-table="tableParams" class="table table-striped table-hover">
+                                <!--search start-->
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="searchClient" placeholder="{{placeholder|translate}}">
                         <span class="input-group-btn">
                             <button class="btn btn-default">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
+                                </div>
+                                <!--search end-->
+                                <thead>
+                                <tr>
+                                    <th width="80px"></th>
+                                    <th translate="client.FIRST_NAME"></th>
+                                    <th translate="client.LAST_NAME"></th>
+                                    <th translate="client.EMAIL"></th>
+                                    <th width="80px"></th>
+                                    <th width="80px"></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr ng-repeat="client in  $data | filter: searchClient"
+                                    class="tableRowSlowAppearance"
+                                    ng-click="addTab(client, 'lastname')">
+
+                                    <td style="vertical-align: middle">
+                                        <img width="60" ng-src="{{::client.image}}">
+                                    </td>
+                                    <td style="vertical-align: middle">{{::client.firstname}}</td>
+                                    <td style="vertical-align: middle">{{::client.lastname}}</td>
+                                    <td style="vertical-align: middle">{{::client.email}}</td>
+                                    <td style="vertical-align: middle">
+                                        <button class="btn btn-sm btn-info"
+                                                ng-click="onEditClick(client, $event)">
+                                            <i class="fa fa-wrench"></i>
+                                            <span translate="page.EDIT"></span>
+                                        </button>
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <button class="btn btn-sm btn-danger"
+                                                ng-click="onDeleteClick(client, $event)">
+                                            <i class="fa fa-remove"></i>
+                                            <span translate="page.DELETE"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
                     </div>
-                    <!--search -->
-                    <thead>
-                    <tr>
-                        <th width="80px"></th>
-                        <th translate="client.FIRST_NAME"></th>
-                        <th translate="client.LAST_NAME"></th>
-                        <th translate="client.EMAIL"></th>
-                        <th width="80px"></th>
-                        <th width="80px"></th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr ng-repeat="client in  $data | filter: searchClient">
-                        <td style="vertical-align: middle">
-                            <img width="60" ng-src="{{::client.image}}">
-                        </td>
-                        <td style="vertical-align: middle">{{::client.firstname}}</td>
-                        <td style="vertical-align: middle">{{::client.lastname}}</td>
-                        <td style="vertical-align: middle">{{::client.email}}</td>
-                        <td style="vertical-align: middle">
-                            <button class="btn btn-sm btn-info"
-                                    ng-click="onEditClick(client)">
-                                <i class="fa fa-wrench"></i>
-                                <span translate="page.EDIT"></span>
-                            </button>
-                        </td>
-                        <td style="vertical-align: middle">
-                            <button class="btn btn-sm btn-danger"
-                                    ng-click="onDeleteClick(client)">
-                                <i class="fa fa-remove"></i>
-                                <span translate="page.DELETE"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                </table>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+        </uib-tab>
 
-<!--tab example-->
-<!--<tabset justified="true" class="tab-container">-->
-    <!--<tab>-->
-        <!--<tab-heading class="tab-heading" >-->
-            <!--<span translate="mainTab"></span>-->
-        <!--</tab-heading>-->
-        <!--<div ng-controller="exampleController"
-            style="min-height: 50px" >-->
-        <!--</div>-->
-    <!--</tab >-->
-    <!--<tab ng-repeat="tab in tabList" active=tab.active>-->
-        <!--<tab-heading class="tab-heading" >-->
-            <!--<span>{{tab.title}}</span>-->
-            <!--<a ng-click="deleteTab($index)" href>-->
-                <!--<i class="fa fa-times"></i>-->
-            <!--</a>-->
-        <!--</tab-heading>-->
-    <!--</tab >-->
-<!--</tabset>-->
+        <uib-tab ng-repeat="tab in tabList" active={{tab.active}}>
+            <uib-tab-heading>
+                <span class="h4 wrapper-xs text-muted">{{tab.tabTitle}}</span>
+                <a ng-click="deleteTab($index)" href>
+                    <i class="fa fa-times"></i>
+                </a>
+            </uib-tab-heading>
+            <!--<profile client="clientObj"></profile>-->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="h4 text-muted">{{tab.data.firstname}} {{tab.data.lastname}}</span>
+                </div>
+                <div class="panel-body">
+                    <img ng-src="{{tab.data.image}}" height="120" class="wrapper-external-sm pull-left">
+                    <div class="wrapper-b pull-left">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <span class="clientProfile" translate="client.FIRST_NAME"></span>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="clientProfile text-danger">{{tab.data.firstname}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="clientProfile" translate="client.LAST_NAME"></span>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="clientProfile text-danger">{{tab.data.lastname}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="clientProfile" translate="client.EMAIL"></span>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="clientProfile text-danger">{{tab.data.email}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </uib-tab>
+    </uib-tabset>
+
+</div>

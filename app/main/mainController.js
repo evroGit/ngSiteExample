@@ -54,5 +54,41 @@
                 }
             )
         };
+
+
+        // Tab management functions start >>>>>
+        $scope.tabList = [];
+
+        $scope.addTab = function (tabObj, tabTitleProperty, index) {
+            // setTabsInactive();
+            if (tabTitleProperty && tabObj.hasOwnProperty(tabTitleProperty) && !isTabOpen(tabObj[tabTitleProperty], tabObj)){
+                $scope.tabList.push({
+                    tabTitle: tabObj[tabTitleProperty] || tabObj.name || "",
+                    active: index,
+                    data: tabObj
+                });
+            }
+        };
+
+        $scope.deleteTab = function (tabIndex) {
+            $scope.tabList.splice(tabIndex, 1);
+        };
+
+        function isTabOpen (title, tabObj) {
+            for (var i = 0; i < $scope.tabList.length; i++) {
+                if (title == $scope.tabList[i].tabTitle) return $scope.tabList[i];
+            }
+            return false;
+        };
+
+        // function setTabsInactive() {
+        //     angular.forEach($scope.tabList, function (tab) {
+        //         tab.active = false;
+        //     });
+        // };
+
+
+        // Tab management functions end <<<<<<<
+
     }
 })();

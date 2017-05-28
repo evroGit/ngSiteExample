@@ -64,13 +64,15 @@
             return null;
         };
 
-        $scope.onEditClick = function (client) {
+        $scope.onEditClick = function (client, event) {
+            if (event) {event.stopPropagation()};
             exchangeService.setEditMode(true);
             exchangeService.setExchangeObject(client);
             $state.go("app.clientEdit");
         };
 
-        $scope.onDeleteClick = function (client) {
+        $scope.onDeleteClick = function (client, event) {
+            if (event) {event.stopPropagation()};
             modalMessageService.showModalMessage(
                 "page.WARNING",
                 "page.DELETE_DATA_QUESTION",

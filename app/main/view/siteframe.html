@@ -6,33 +6,27 @@
 
 <!-- slidePanel example start-->
 <div class="slidePanel" ng-class="{'active':slidePanel.active}">
-    <!--<button class="btn btn-default" ng-click="slidePanel = !slidePanel">-->
-    <!--<i class="fa fa-gear"></i>-->
-    <!--</button>-->
-    <div class="panel panel-primary">
-        <div class="panel-heading">
+    <div class="panel panel-primary" >
+        <div class="panel-heading" style="background-color: #6293bd">
+            <img width="40" class="wrapper-xs" src="img/icons/user15.png">
             <span class="h5">{{userData.username}}</span>
         </div>
         <div class="panel-body">
-            <!--<label class="i-switch bg-info pull-right">-->
-            <!--<input type="checkbox" ng-model="app.slidePanel.chal">-->
-            <!--<i></i>-->
-            <!--</label>-->
-            <div class="wrapper-xs">
+            <div class="wrapper-sm">
                 <label class="text-info pull-right">
                     {{userData.firstname}}
                 </label>
                 <span class="h5 text-info" translate="client.FIRST_NAME"></span>
             </div>
 
-            <div class="wrapper-xs">
+            <div class="wrapper-sm">
                 <label class="text-info pull-right">
                     {{userData.lastname}}
                 </label>
                 <span class="h5 text-info" translate="client.LAST_NAME"></span>
             </div>
 
-            <button class="btn btn-primary btn-block pull-right"
+            <button class="btn btn-primary"
                     ng-click="slidePanel.active = !slidePanel.active">
                 <span translate="page.OK"></span>
             </button>

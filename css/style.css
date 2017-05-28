@@ -18,6 +18,19 @@ body {
     padding:30px;
 }
 
+.wrapper-external {
+    margin:20px
+}
+.wrapper-external-xs {
+    margin:5px;
+}
+.wrapper-external-sm {
+    margin:10px
+}
+.wrapper-external-b {
+    margin:30px;
+}
+
 /*text size*/
 .text-lg {
     font-size: 18px;
@@ -51,6 +64,10 @@ body {
     border-radius: 90px !important;
 }
 
+.resetPadding {
+    padding:0 !important;
+}
+
 .loginBody {
     padding-top:300px;
     background-position:center top;
@@ -69,7 +86,7 @@ body {
     z-index: 9999 !important;
     background-image: url("../img/loading.gif");
     background-size: 50px ;
-    background-color: #0f0f0f;
+    background-color: #676767;
     background-repeat: no-repeat;
     background-position: 50%;
     opacity: 0.50 !important;
@@ -113,7 +130,7 @@ body {
 }
 
 .navi-wrap {
-    background-color: #337ab7;
+    background-color: #6293bd;
     border:2px solid #2e6da4;
     border-bottom: none;
     color:#cccccc ;
@@ -307,6 +324,7 @@ body {
 
 i.animatedIcon {
     font-size: 14px;
+    color:#337ab7;
     width: 17px;
     vertical-align: middle;
     margin: 0;
@@ -363,21 +381,59 @@ i.animatedIcon:hover {
     transition: all .1s ease-in-out 0s;
 }
 
-.helpQuestions.ng-enter {
+.helpQuestions.ng-enter,
+.tableRowSlowAppearance.ng-enter {
     -webkit-transition:opacity 0.2s;
     transition:opacity 0.2s;
     opacity: 0.1;
 }
-.helpQuestions.ng-enter-active {
+.helpQuestions.ng-enter-active,
+.tableRowSlowAppearance.ng-enter-active {
     opacity: 1;
 }
 
-.helpQuestions.ng-leave {
+.helpQuestions.ng-leave,
+.tableRowSlowAppearance.ng-leave{
     -webkit-transition:opacity 0.2s;
     transition:opacity 0.2s;
     opacity: 1;
 }
-.helpQuestions.ng-leave-active {
+.helpQuestions.ng-leave-active,
+.tableRowSlowAppearance.ng-leave-active {
     opacity: 0.1;
 }
 /*Help Site end*/
+
+
+.myListTabs>.nav {
+    margin-bottom: -2px;
+}
+.myListTabs.nav-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.myListTabs>.nav-tabs>li.active>a,
+.myListTabs>.nav-tabs.nav-justified>li.active>a {
+    background-color: #f5f5f5 !important;
+    border-bottom:0 !important;
+}
+
+.myListTabs>.nav-tabs>li,
+.myListTabs>.nav-tabs.nav-justified>li {
+    width: auto !important;
+    z-index: 1 !important;
+}
+
+/*.nav-tabs.nav-justified > .active > a,*/
+/*.nav-tabs.nav-justified > .active > a:hover,*/
+/*.nav-tabs.nav-justified > .active > a:focus {*/
+    /*border-bottom-color: #f5f5f5;*/
+/*}*/
+
+.clientProfile {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
